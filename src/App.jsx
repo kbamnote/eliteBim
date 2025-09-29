@@ -15,19 +15,19 @@ import Navbar from './components/common/Navbar'
 const App = () => {
   return (
     <>
-    <Header/>
-    <Navbar/>
-    <Routes>
-    <Route path='/' element={<LandingPage/>} />
-    <Route path='/courses' element={<CoursesPage/>} />
-    <Route path='/hire' element={<HiringPage/>} />
-    <Route path='/events' element={<EventsPage/>} />
-    <Route path='/career' element={<CareerPage/>} />
-    <Route path='/impact' element={<ImpactPage/>} />
-    <Route path='/resources' element={<ResourcesPage/>} />
-    <Route path='/*' element={<NotFound/>} />
-    </Routes>
-    <Footer/>
+      <Header />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/courses' element={<CoursesPage />} />
+        <Route path='/hire' element={<HiringPage />} />
+        <Route path='/events' element={<EventsPage />} />
+        <Route path='/career' element={<CareerPage />} />
+        <Route path='/impact' element={<ImpactPage />} />
+        <Route path='/resources' element={<ResourcesPage />} />
+        <Route path='/*' element={<NotFound />} />
+      </Routes>
+      <Footer />
     </>
   )
 }
