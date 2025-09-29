@@ -8,13 +8,12 @@ import Navbar from './components/common/Navbar'
 const App = () => {
   return (
     <>
-    <Header/>
-    <Navbar/>
-    <Routes>
-    <Route path='/' element={<LandingPage/>} />
-
-    </Routes>
-    <Footer/>
+      <Header />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+      </Routes>
+      <Footer />
     </>
   )
 }

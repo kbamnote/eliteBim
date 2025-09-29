@@ -10,23 +10,22 @@ import Press from "./Press"
 import ProjectsSection from "./ProjectSection"
 import TestimonialSection from "./TestimonialSection"
 
-
-function App() {
+const LandingPage = () => {
   return (
-    <div >
-     <Hero/>
-     <ImpactSection/>
-     <CoursesSection/>
-<MentorsSection/>
-<ProjectsSection/>
-<TestimonialSection/>
-<BimFeatures/>
-<BimResources/>
-<BimTestimonials/>
-<Press/>
-<NextChapter/>
+    <div>
+      <Hero />
+      <ImpactSection />
+      <CoursesSection />
+      <MentorsSection />
+      <ProjectsSection />
+      <TestimonialSection />
+      <BimFeatures />
+      <BimResources />
+      <BimTestimonials />
+      <Press />
+      <NextChapter />
     </div>
   )
 }
 
-export default App
+export default LandingPage
