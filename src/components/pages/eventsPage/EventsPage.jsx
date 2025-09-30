@@ -1,8 +1,15 @@
 import React from 'react'
+import EventHero from './EventHero'
+import WebinarCta from './WebinarCta'
+import NextChapter from '../landingPage/NextChapter'
 
 const EventsPage = () => {
   return (
-    <div>EventsPage</div>
+   <>
+   <EventHero/>
+   <WebinarCta/>
+   <NextChapter/>
+   </>
   )
 }
 
