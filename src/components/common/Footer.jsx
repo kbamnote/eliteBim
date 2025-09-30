@@ -1,5 +1,7 @@
 import React from "react";
 import { Mail, Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
+import logo from '../../assets/1.jpg'
+
 
 const Footer = () => {
   return (
@@ -21,9 +23,9 @@ const Footer = () => {
           {/* Logo */}
           <div>
             <img
-              src="https://novatr.com/images/novatr-logo.png" // placeholder logo
+              src={logo} // placeholder logo
               alt="Novatr"
-              className="h-8"
+              className="h-28"
             />
             <p className="mt-2 text-gray-600 max-w-md">
               Join thousands of people who are taking AEC by storm with Novatr.
