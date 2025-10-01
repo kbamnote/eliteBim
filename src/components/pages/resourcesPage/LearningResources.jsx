@@ -1,5 +1,7 @@
 import React from 'react';
 import { BookOpen, Video, FileText, Download, Star, Clock } from 'lucide-react';
+import c1 from '../../../assets/c1.jpg'
+import c2 from '../../../assets/c2.jpg'
 
 export default function LearningResources() {
   const categories = [
@@ -37,7 +39,7 @@ export default function LearningResources() {
       duration: "45 min read",
       rating: 4.9,
       downloads: "12,500",
-      image: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?w=400&h=250&fit=crop"
+      image: c1
     },
     {
       title: "Revit Family Creation Masterclass",
@@ -46,7 +48,7 @@ export default function LearningResources() {
       duration: "3.5 hours",
       rating: 4.8,
       downloads: "8,900",
-      image: "https://images.unsplash.com/photo-1596024677829-c4b08c2b0c1f?w=400&h=250&fit=crop"
+      image: c2
     },
     {
       title: "BIM Collaboration Standards",
@@ -55,7 +57,7 @@ export default function LearningResources() {
       duration: "30 min read",
       rating: 4.9,
       downloads: "15,200",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop"
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=250&fit=crop&q=80"
     }
   ];
 
@@ -120,6 +122,9 @@ export default function LearningResources() {
                     src={resource.image} 
                     alt={resource.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.src = "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?w=400&h=250&fit=crop&q=80";
+                    }}
                   />
                 </div>
                 

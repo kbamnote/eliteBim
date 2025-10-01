@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Instagram, Linkedin, Facebook, Youtube, Send, MapPin, Phone, Clock } from "lucide-react";
-import logo from '../../assets/1.jpg'
+import logo from '../../assets/eliteLogo.jpg'
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -30,9 +30,7 @@ const Footer = () => {
         <div className="space-y-6 lg:col-span-1">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Elite BIM Logo" className="h-16 w-auto" />
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-pink-300">
-              Elite BIM
-            </span>
+            
           </div>
           
           <p className="text-purple-200 max-w-md">
