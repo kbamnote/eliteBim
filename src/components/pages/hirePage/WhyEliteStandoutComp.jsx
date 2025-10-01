@@ -1,7 +1,7 @@
 import React from "react";
 import { TrendingUp, MessageSquare, Sparkles, Box } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules"; // keep Autoplay only
 import "swiper/css";
 
 import cardImg1 from "../../../assets/c1.webp";
@@ -10,7 +10,7 @@ import cardImg3 from "../../../assets/c3.webp";
 
 const WhyEliteStandoutComp = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -71,20 +71,14 @@ const WhyEliteStandoutComp = () => {
           </div>
 
           {/* Right Side - Cards with Swiper */}
-          <div className="hidden md:block">
+          <div>
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={20}
+              spaceBetween={30}
               loop={true}
-              className="!w-full"
               autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
-              }}
-              breakpoints={{
-                0: { slidesPerView: 1 }, // Mobile
-                640: { slidesPerView: 1 }, // Small tablets
-                1024: { slidesPerView: 1 }, // Desktop (1 card as per design)
               }}
             >
               {/* Card 1 */}
@@ -94,7 +88,7 @@ const WhyEliteStandoutComp = () => {
                     <img
                       src={cardImg1}
                       alt="Global Exposure - Taught by experts"
-                      className="w-full max-w-full object-cover"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">
@@ -116,12 +110,12 @@ const WhyEliteStandoutComp = () => {
 
               {/* Card 2 */}
               <SwiperSlide>
-                <div className="group bg-white/80 rounded-2xl overflow-hidden flex flex-col h-[600px]">
+                <div className="group relative bg-white/80 rounded-2xl overflow-hidden flex flex-col h-[600px]">
                   <div className="overflow-hidden">
                     <img
                       src={cardImg2}
                       alt="Industry Ready - Real world projects"
-                      className="w-full max-w-full object-cover"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">
@@ -149,7 +143,7 @@ const WhyEliteStandoutComp = () => {
                     <img
                       src={cardImg3}
                       alt="Skills of the future - Industry workflows"
-                      className="w-full max-w-full object-cover"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">

@@ -35,28 +35,33 @@ const HiringWithEliteComp = () => {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
-          {/* Horizontal line for medium+ screens */}
-          <div className="hidden md:block absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-purple-300 z-0"></div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <div key={index} className="relative flex flex-col items-center text-center z-10">
-                {/* Icon */}
-                <div className="mb-6 p-4 bg-purple-100 rounded-full">
-                  <IconComponent className="w-8 h-8 text-purple-600" strokeWidth={2} />
+              <div key={index} className="relative">
+                {/* Progress Line (between steps) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-300"></div>
+                )}
+
+                {/* Step Content */}
+                <div className="relative flex flex-col items-center text-center z-10">
+                  {/* Icon */}
+                  <div className="mb-6 p-4 bg-purple-100 rounded-full">
+                    <IconComponent className="w-8 h-8 text-purple-600" strokeWidth={2} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-purple-600 mb-4">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm sm:text-base max-w-xs">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-semibold text-purple-600 mb-4">
-                  {step.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm sm:text-base max-w-xs">
-                  {step.description}
-                </p>
               </div>
             );
           })}
