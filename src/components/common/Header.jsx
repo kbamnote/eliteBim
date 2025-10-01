@@ -1,11 +1,78 @@
 import React, { useState } from "react";
-import { X, Phone, Mail, MapPin, Calendar, User } from "lucide-react";
+import { X, CheckCircle, AlertCircle } from "lucide-react";
+import { addDetail } from '../utils/Api';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("callback");
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phoneNo: '',
+    experience: '',
+    specialisation: ''
+  });
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: null
+  });
 
-  // Close modal when clicking outside content
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async () => {
+    if (!agreedToTerms) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: 'Please agree to the Terms of Use and Privacy Policy.'
+      });
+      return;
+    }
+
+    if (!formData.fullName || !formData.email || !formData.phoneNo || !formData.experience || !formData.specialisation) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: 'Please fill in all required fields.'
+      });
+      return;
+    }
+
+    setStatus({ loading: true, success: false, error: null });
+
+    try {
+      await addDetail(formData);
+      
+      setStatus({ loading: false, success: true, error: null });
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNo: '',
+        experience: '',
+        specialisation: ''
+      });
+      setAgreedToTerms(false);
+      
+      setTimeout(() => {
+        setStatus({ loading: false, success: false, error: null });
+        setIsOpen(false);
+      }, 3000);
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: error.response?.data?.message || 'Something went wrong. Please try again.'
+      });
+    }
+  };
+
   const handleOverlayClick = (e) => {
     if (e.target.id === "overlay") {
       setIsOpen(false);
@@ -51,44 +118,16 @@ const Header = () => {
               Know how you can accelerate your career 🚀
             </p>
 
-            {/* Tabs */}
-            <div className="flex mb-6 bg-purple-800/50 rounded-lg p-1">
-              <button
-                onClick={() => setActiveTab("callback")}
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-                  activeTab === "callback"
-                    ? "bg-white text-purple-900"
-                    : "text-purple-200 hover:text-white"
-                }`}
-              >
-                Request Callback
-              </button>
-              <button
-                onClick={() => setActiveTab("contact")}
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-                  activeTab === "contact"
-                    ? "bg-white text-purple-900"
-                    : "text-purple-200 hover:text-white"
-                }`}
-              >
-                Contact Us
-              </button>
-            </div>
-
             {/* Form */}
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
-                />
-              </div>
+            <div className="space-y-4">
+              <input
+                type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                placeholder="Full Name"
+                className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
+              />
               
               <div className="flex">
                 <span className="px-4 py-3 border border-r-0 border-purple-400/30 rounded-l-lg bg-purple-800/30 text-purple-200 font-medium">
@@ -96,6 +135,9 @@ const Header = () => {
                 </span>
                 <input
                   type="tel"
+                  name="phoneNo"
+                  value={formData.phoneNo}
+                  onChange={handleChange}
                   placeholder="Phone Number"
                   className="w-full border border-purple-400/30 rounded-r-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
                 />
@@ -103,37 +145,67 @@ const Header = () => {
               
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email Address"
                 className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
               />
 
-              <select className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300">
+              <select 
+                name="experience"
+                value={formData.experience}
+                onChange={handleChange}
+                className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+              >
                 <option value="">Select experience</option>
-                <option value="fresher">Fresher</option>
-                <option value="1-2">1-2 Years</option>
-                <option value="3+">3+ Years</option>
+                <option value="Fresher">Fresher</option>
+                <option value="1-2 Years">1-2 Years</option>
+                <option value="3-5 Years">3-5 Years</option>
+                <option value="5+ Years">5+ Years</option>
               </select>
 
-              <select className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300">
+              <select 
+                name="specialisation"
+                value={formData.specialisation}
+                onChange={handleChange}
+                className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+              >
                 <option value="">Select specialisation</option>
-                <option value="architect">Architect</option>
-                <option value="civil">Civil Engineer</option>
-                <option value="mep">MEP Engineer</option>
-                <option value="interior">Interior Designer</option>
-                <option value="other">Other</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Structural Engineering">Structural Engineering</option>
+                <option value="MEP Engineering">MEP Engineering</option>
+                <option value="Interior Design">Interior Design</option>
+                <option value="Computational Design">Computational Design</option>
+                <option value="Other">Other</option>
               </select>
 
-              {activeTab === "contact" && (
-                <textarea
-                  placeholder="Your Message"
-                  rows="4"
-                  className="w-full border border-purple-400/30 rounded-lg px-4 py-3 bg-purple-800/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-purple-300"
-                ></textarea>
+              {status.success && (
+                <div className="bg-green-500/20 border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-green-300 font-semibold">Success!</p>
+                    <p className="text-green-200 text-sm">We'll call you back soon!</p>
+                  </div>
+                </div>
+              )}
+
+              {status.error && (
+                <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-4 flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-red-300 font-semibold">Error</p>
+                    <p className="text-red-200 text-sm">{status.error}</p>
+                  </div>
+                </div>
               )}
 
               <label className="flex items-start text-sm text-purple-200">
                 <input
                   type="checkbox"
+                  checked={agreedToTerms}
+                  onChange={(e) => setAgreedToTerms(e.target.checked)}
                   className="mr-2 mt-1 accent-purple-500"
                 />
                 I agree to the{" "}
@@ -148,34 +220,19 @@ const Header = () => {
               </label>
 
               <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-3 rounded-lg shadow-lg hover:from-yellow-300 hover:to-pink-300 transition-all font-bold transform hover:scale-[1.02] flex items-center justify-center gap-2"
+                onClick={handleSubmit}
+                disabled={status.loading}
+                className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-3 rounded-lg shadow-lg hover:from-yellow-300 hover:to-pink-300 transition-all font-bold transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {activeTab === "callback" ? "Request a Callback" : "Send Message"}
+                {status.loading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-purple-900 border-t-transparent rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Request a Callback"
+                )}
               </button>
-            </form>
-
-            {/* Contact Info */}
-            <div className="mt-6 pt-6 border-t border-purple-400/30">
-              <h3 className="text-white font-bold mb-3">Contact Information</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-yellow-400" />
-                  <span className="text-purple-200">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-yellow-400" />
-                  <span className="text-purple-200">info@elitebim.com</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-yellow-400" />
-                  <span className="text-purple-200">123 Innovation Street, Tech City</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-yellow-400" />
-                  <span className="text-purple-200">Mon-Fri: 9AM - 6PM</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

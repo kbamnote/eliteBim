@@ -1,6 +1,7 @@
 import BimFeatures from "./BimFeatures"
 import BimResources from "./BimResources"
 import BimTestimonials from "./BimTestimonials"
+import ContactPage from "./ContactPage"
 import CoursesSection from "./CourseSection"
 import Hero from "./Hero"
 import HeroVideo from "./HeroVideo"
@@ -22,8 +23,10 @@ const LandingPage = () => {
       <ProjectsSection />
       <TestimonialSection />
       <BimFeatures />
+      <ContactPage/>
       <BimResources />
       <BimTestimonials />
+      
       <Press />
       <NextChapter />
     </div>
