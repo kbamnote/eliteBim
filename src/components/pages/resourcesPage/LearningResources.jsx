@@ -17,7 +17,7 @@ export default function LearningResources() {
       count: "200+",
       description: "Comprehensive guides and best practices documentation",
       items: ["BIM Standards", "Workflow Guides", "Troubleshooting", "Templates"],
-      color: "from-green-500 to-emerald-600"
+      color: "from-purple-500 to-pink-600"
     },
     {
       icon: BookOpen,
@@ -25,7 +25,7 @@ export default function LearningResources() {
       count: "25+",
       description: "Structured learning journeys for different skill levels",
       items: ["Beginner Track", "Advanced Track", "Manager Track", "Specialist Track"],
-      color: "from-purple-500 to-pink-600"
+      color: "from-indigo-500 to-purple-600"
     }
   ];
 
@@ -60,7 +60,7 @@ export default function LearningResources() {
   ];
 
   return (
-    <div className="py-16 lg:py-24 bg-gray-50">
+    <div className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -76,14 +76,14 @@ export default function LearningResources() {
         {/* Categories */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow card-hover animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 card-hover animate-fade-in-up border border-gray-100" style={{animationDelay: `${index * 0.2}s`}}>
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} p-4 mb-6`}>
                 <category.icon className="w-8 h-8 text-white" />
               </div>
               
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
-                <span className="text-sm font-semibold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                   {category.count}
                 </span>
               </div>
@@ -93,13 +93,13 @@ export default function LearningResources() {
               <div className="space-y-2">
                 {category.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                     <span className="text-sm text-gray-600">{item}</span>
                   </div>
                 ))}
               </div>
               
-              <button className="w-full mt-6 bg-gray-100 text-gray-800 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              <button className="w-full mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
                 Explore {category.title}
               </button>
             </div>
@@ -114,7 +114,7 @@ export default function LearningResources() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {featuredResources.map((resource, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border border-gray-100">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src={resource.image} 
@@ -125,7 +125,7 @@ export default function LearningResources() {
                 
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full">
+                    <span className="text-xs px-2 py-1 bg-purple-100 text-purple-800 rounded-full">
                       {resource.type}
                     </span>
                     <div className="flex items-center gap-1">
@@ -148,7 +148,7 @@ export default function LearningResources() {
                     </div>
                   </div>
                   
-                  <button className="w-full bg-emerald-600 text-white py-2 rounded-lg font-semibold hover:bg-emerald-700 transition-colors">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
                     Access Resource
                   </button>
                 </div>
@@ -158,14 +158,14 @@ export default function LearningResources() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <div className="text-center animate-fade-in-up delay-500">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
             Can't Find What You're Looking For?
           </h3>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Our resource library is constantly growing. Request specific content or suggest new topics.
           </p>
-          <button className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-colors">
+          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
             Request Resources
           </button>
         </div>

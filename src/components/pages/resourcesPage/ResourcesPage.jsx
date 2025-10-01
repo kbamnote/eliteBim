@@ -1,20 +1,20 @@
 import React from 'react'
 import ResourcesHero from './ResourcesHero'
 import LearningResources from './LearningResources'
-import ToolsAndSoftware from './ToolsAndSoftware'
 import IndustryInsights from './IndustryInsights'
 import CommunityResources from './CommunityResources'
+import ToolsAndSoftware from './ToolsAndSoftware'
 import ResourcesDownloads from './ResourcesDownloads'
 import ResourcesCTA from './ResourcesCTA'
 
 const ResourcesPage = () => {
   return (
-    <div>
+    <div className="pt-20">
       <ResourcesHero />
       <LearningResources />
-      <ToolsAndSoftware />
       <IndustryInsights />
       <CommunityResources />
+      <ToolsAndSoftware />
       <ResourcesDownloads />
       <ResourcesCTA />
     </div>

@@ -12,7 +12,7 @@ import TestimonialSection from "./TestimonialSection"
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className="pt-20">
       <Hero />
       <ImpactSection />
       <CoursesSection />
