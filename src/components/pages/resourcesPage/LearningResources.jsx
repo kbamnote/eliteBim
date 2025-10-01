@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookOpen, Video, FileText, Download, Star, Clock } from 'lucide-react';
-import c1 from '../../../assets/c1.jpg'
-import c2 from '../../../assets/c2.jpg'
+import c1 from '../../../assets/c1.webp'
+import c2 from '../../../assets/c2.webp'
 
 export default function LearningResources() {
   const categories = [
