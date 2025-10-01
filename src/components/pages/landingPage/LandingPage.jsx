@@ -3,6 +3,7 @@ import BimResources from "./BimResources"
 import BimTestimonials from "./BimTestimonials"
 import CoursesSection from "./CourseSection"
 import Hero from "./Hero"
+import HeroVideo from "./HeroVideo"
 import ImpactSection from "./ImpactSection"
 import MentorsSection from "./MentorsSection"
 import NextChapter from "./NextChapter"
@@ -13,6 +14,7 @@ import TestimonialSection from "./TestimonialSection"
 const LandingPage = () => {
   return (
     <div className="pt-20">
+      <HeroVideo/>
       <Hero />
       <ImpactSection />
       <CoursesSection />

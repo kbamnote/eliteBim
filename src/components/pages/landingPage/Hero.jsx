@@ -178,13 +178,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Chat Widget */}
-      <button className="fixed bottom-8 right-8 bg-white text-gray-800 px-6 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 flex items-center gap-2 z-50">
-        Chat With Us
-        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-          <Phone className="w-5 h-5 text-white" />
-        </div>
-      </button>
+      
     </div>
   );
 }
