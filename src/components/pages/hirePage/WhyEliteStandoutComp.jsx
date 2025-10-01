@@ -1,9 +1,8 @@
 import React from "react";
 import { TrendingUp, MessageSquare, Sparkles, Box } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules"; // keep Autoplay only
 import "swiper/css";
-import "swiper/css/pagination";
 
 import cardImg1 from "../../../assets/c1.webp";
 import cardImg2 from "../../../assets/c2.webp";
@@ -81,7 +80,6 @@ const WhyEliteStandoutComp = () => {
                 delay: 3000,
                 disableOnInteraction: false,
               }}
-
             >
               {/* Card 1 */}
               <SwiperSlide>
@@ -90,7 +88,7 @@ const WhyEliteStandoutComp = () => {
                     <img
                       src={cardImg1}
                       alt="Global Exposure - Taught by experts"
-                      className="w-full object-contain"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">
@@ -117,7 +115,7 @@ const WhyEliteStandoutComp = () => {
                     <img
                       src={cardImg2}
                       alt="Industry Ready - Real world projects"
-                      className="w-full object-contain"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">
@@ -145,7 +143,7 @@ const WhyEliteStandoutComp = () => {
                     <img
                       src={cardImg3}
                       alt="Skills of the future - Industry workflows"
-                      className="w-full object-contain"
+                      className="w-full object-cover"
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-grow justify-between">

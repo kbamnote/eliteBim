@@ -21,7 +21,7 @@ const HiringWithEliteComp = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -40,15 +40,13 @@ const HiringWithEliteComp = () => {
             const IconComponent = step.icon;
             return (
               <div key={index} className="relative">
-                {/* Progress Line */}
-                <div className="hidden md:block absolute top-8 left-1/2 w-full h-1">
-                  {index < steps.length - 1 && (
-                    <div className="h-full bg-gradient-to-r from-purple-500 to-purple-300"></div>
-                  )}
-                </div>
+                {/* Progress Line (between steps) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-300"></div>
+                )}
 
-                {/* Content */}
-                <div className="relative flex flex-col items-center text-center">
+                {/* Step Content */}
+                <div className="relative flex flex-col items-center text-center z-10">
                   {/* Icon */}
                   <div className="mb-6 p-4 bg-purple-100 rounded-full">
                     <IconComponent className="w-8 h-8 text-purple-600" strokeWidth={2} />
