@@ -52,7 +52,7 @@ export default function CareerPaths() {
   return (
     <div className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Choose Your Career Path
           </h2>
@@ -63,7 +63,7 @@ export default function CareerPaths() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {paths.map((path, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group card-hover animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${path.color} p-4 mb-6 group-hover:scale-110 transition-transform`}>
                 <path.icon className="w-8 h-8 text-white" />
               </div>
@@ -105,14 +105,14 @@ export default function CareerPaths() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-fade-in-up">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Not Sure Which Path is Right for You?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Take our career assessment to discover the BIM career path that matches your interests and skills.
           </p>
-          <button className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-700 transition-colors">
+          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
             Take Career Assessment
           </button>
         </div>

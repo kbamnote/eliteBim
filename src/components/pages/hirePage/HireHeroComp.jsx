@@ -1,48 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Briefcase, Users, TrendingUp, Target } from 'lucide-react';
 
 export default function HireHeroComp() {
+  const [currentStat, setCurrentStat] = useState(0);
+  
+  const stats = [
+    { icon: Users, label: "Skilled Professionals", value: "2400+" },
+    { icon: TrendingUp, label: "Success Rate", value: "95%" },
+    { icon: Target, label: "Companies Served", value: "500+" }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStat((prev) => (prev + 1) % stats.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-40 h-40 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
       </div>
 
       {/* Geometric Decorations */}
-      <div className="absolute top-20 right-1/4 w-16 h-16 border-4 border-cyan-400 rotate-45 opacity-30"></div>
-      <div className="absolute bottom-40 left-1/4 w-12 h-12 border-4 border-blue-400 rotate-12 opacity-30"></div>
-      <div className="absolute top-1/2 right-20 w-8 h-8 bg-cyan-400 rounded-full opacity-40"></div>
+      <div className="absolute top-20 right-1/4 w-16 h-16 border-4 border-yellow-400 rotate-45 opacity-30 animate-spin-slow"></div>
+      <div className="absolute bottom-40 left-1/4 w-12 h-12 border-4 border-pink-400 rotate-12 opacity-30 animate-bounce-slow"></div>
+      <div className="absolute top-1/2 right-20 w-8 h-8 bg-yellow-400 rounded-full opacity-40 animate-ping-slow"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
                 Hire
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300">
                   Elite BIM
                 </span>
                 <br />
                 Talent
               </h1>
               
-              <p className="text-blue-200 text-lg lg:text-xl max-w-xl">
+              <p className="text-yellow-200 text-lg lg:text-xl max-w-xl">
                 Connect with industry-ready BIM professionals. Our certified graduates are equipped with cutting-edge skills and real-world experience to drive your projects forward.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+              <button className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
                 Browse Talent
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-indigo-400">
+              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
                 <Briefcase className="w-5 h-5" />
                 Post a Job
               </button>
@@ -50,93 +65,108 @@ export default function HireHeroComp() {
 
             {/* Stats Section */}
             <div className="pt-8 grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-300">2400+</div>
-                <div className="text-blue-200 text-sm">Skilled Professionals</div>
+              <div className="text-center animate-fade-in-up delay-300">
+                <div className="text-3xl font-bold text-yellow-300">2400+</div>
+                <div className="text-yellow-200 text-sm">Skilled Professionals</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-300">95%</div>
-                <div className="text-blue-200 text-sm">Success Rate</div>
+              <div className="text-center animate-fade-in-up delay-500">
+                <div className="text-3xl font-bold text-pink-300">95%</div>
+                <div className="text-yellow-200 text-sm">Success Rate</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-300">500+</div>
-                <div className="text-blue-200 text-sm">Companies Served</div>
+              <div className="text-center animate-fade-in-up delay-700">
+                <div className="text-3xl font-bold text-yellow-300">500+</div>
+                <div className="text-yellow-200 text-sm">Companies Served</div>
+              </div>
+            </div>
+
+            {/* Company Integration Section */}
+            <div className="pt-8 animate-fade-in-up delay-900">
+              <p className="text-yellow-200 text-sm mb-4">Trusted by industry leaders</p>
+              <div className="flex flex-wrap gap-6 items-center opacity-70">
+                <div className="text-white font-bold text-2xl hover:text-yellow-300 transition-colors">WSP</div>
+                <div className="text-white font-bold text-2xl hover:text-pink-300 transition-colors">AECOM</div>
+                <div className="text-white font-bold text-2xl hover:text-yellow-300 transition-colors">Arup</div>
+                <div className="text-white font-bold text-2xl hover:text-pink-300 transition-colors">Bechtel</div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Professional Grid */}
-          <div className="relative">
+          <div className="relative animate-fade-in-right">
             {/* Main Grid of Professional Images */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-cyan-400/30 shadow-2xl transform hover:scale-105 transition-transform">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
                   alt="BIM Professional"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-blue-400/30 shadow-2xl transform hover:scale-105 transition-transform">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop" 
                   alt="BIM Professional"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-transform">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" 
                   alt="BIM Professional"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-transform">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop" 
                   alt="BIM Professional"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>
 
             {/* Floating Talent Card */}
-            <div className="absolute top-8 -right-4 bg-gradient-to-br from-indigo-900 to-blue-900 rounded-2xl p-6 shadow-2xl border border-blue-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform">
+            <div className="absolute top-8 -right-4 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl p-6 shadow-2xl border border-purple-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform animate-float">
               <div className="flex items-start gap-3 mb-3">
-                <div className="p-2 bg-blue-500 rounded-lg">
+                <div className="p-2 bg-yellow-500 rounded-lg">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">500+</div>
-                  <div className="text-sm text-blue-200">Available Now</div>
+                  <div className="text-sm text-purple-200">Available Now</div>
                 </div>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-white text-sm">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span>BIM Modelers</span>
                 </div>
                 <div className="flex items-center gap-2 text-white text-sm">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-300"></div>
                   <span>BIM Coordinators</span>
                 </div>
                 <div className="flex items-center gap-2 text-white text-sm">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-600"></div>
                   <span>BIM Managers</span>
                 </div>
               </div>
             </div>
 
             {/* Performance Card */}
-            <div className="absolute bottom-8 -left-4 bg-gradient-to-br from-blue-900 to-indigo-900 rounded-2xl p-5 shadow-2xl border border-blue-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform">
+            <div className="absolute bottom-8 -left-4 bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl p-5 shadow-2xl border border-purple-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform animate-float-delayed">
               <div className="text-lg font-semibold text-white mb-3">Hiring Success</div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Target className="w-5 h-5 text-blue-300" />
-                  <span className="text-blue-200 text-sm">Placement Rate</span>
+                  {React.createElement(stats[currentStat].icon, { className: "w-5 h-5 text-purple-300" })}
+                  <span className="text-purple-200 text-sm">{stats[currentStat].label}</span>
                 </div>
-                <div className="text-2xl font-bold text-white">95%</div>
+                <div className="text-2xl font-bold text-white">{stats[currentStat].value}</div>
               </div>
             </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-6 left-1/2 w-12 h-12 border-4 border-yellow-400 rotate-45 animate-spin-slow"></div>
+            <div className="absolute -bottom-4 right-1/4 w-8 h-8 border-4 border-pink-400 rotate-12 animate-bounce-slow"></div>
           </div>
         </div>
       </div>

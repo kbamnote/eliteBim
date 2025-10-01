@@ -63,7 +63,7 @@ export default function LearningResources() {
     <div className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Learning Resources
           </h2>
@@ -76,7 +76,7 @@ export default function LearningResources() {
         {/* Categories */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow card-hover animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} p-4 mb-6`}>
                 <category.icon className="w-8 h-8 text-white" />
               </div>
