@@ -1,73 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const courses = [
-  {
-    title: "BIM Professional Course for Architects V2.0",
-    duration: "7 months - Online",
-    mode: "Live online",
-    cohort: "1st November, 2025",
-    tag: "Most Popular",
-  },
-  {
-    title: "Master Computational Design Course",
-    duration: "6 months",
-    mode: "Live online",
-    cohort: "1st November, 2025",
-  },
-  {
-    title: "BIM Professional Course For Civil Engineers",
-    duration: "7 months",
-    mode: "Live online",
-    cohort: "11th October, 2025",
-  },
-  {
-    title: "Advanced Interior Design with AI",
-    duration: "4 months",
-    mode: "Live online",
-    cohort: "To Be Announced",
-  },
-  {
-    title: "BIM Professional Course for MEP Engineers",
-    duration: "7 months",
-    mode: "Live online",
-    cohort: "1st November, 2025",
-    tag: "Newly Launched",
-  },
-];
-
 const CoursesDropdown = () => {
   return (
-    <div className="absolute left-0 top-full mt-2 w-[900px] bg-white shadow-xl rounded-lg p-6 grid grid-cols-2 gap-6 z-50">
-      {courses.map((course, idx) => (
-        <div
-          key={idx}
-          className="border rounded-lg p-4 hover:shadow-md transition"
-        >
-          {" "}
-          <div className="flex items-center justify-between mb-2">
-            {" "}
-            <span className="text-sm text-gray-500">{course.duration}</span>
-            {course.tag && (
-              <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
-                {course.tag}{" "}
-              </span>
-            )}{" "}
-          </div>{" "}
-          <h3 className="font-semibold text-gray-800">{course.title}</h3>{" "}
-          <p className="text-sm text-gray-500">{course.mode}</p>{" "}
-          <p className="mt-2 text-sm">
-            {" "}
-            <span className="font-medium">Next Cohort:</span> {course.cohort}{" "}
-          </p>{" "}
-          <Link
-            to="#"
-            className="mt-3 inline-block text-purple-600 text-sm font-medium hover:underline"
-          >
-            Know More →{" "}
-          </Link>{" "}
+    <div className="absolute left-0 top-full mt-2 w-[400px] bg-white shadow-xl rounded-lg p-6 z-50">
+      <div className="border rounded-lg p-4 hover:shadow-md transition group">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm text-gray-500">7 months - Online</span>
+          <span className="text-xs bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 px-3 py-1 rounded-full font-semibold">
+            Most Popular
+          </span>
         </div>
-      ))}{" "}
+        <h3 className="font-bold text-gray-800 text-lg mb-2">Elite BIM Professional Course</h3>
+        <p className="text-sm text-gray-600 mb-2">Comprehensive BIM training for next-gen professionals</p>
+        <p className="text-sm text-gray-500 mb-3">
+          <span className="font-medium">Next Cohort:</span> 1st November, 2025
+        </p>
+        <div className="flex items-center justify-between">
+          <div className="text-sm text-gray-600">
+            <span className="font-medium">Mode:</span> Live Online
+          </div>
+          <Link
+            to="/courses"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Explore Course
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
