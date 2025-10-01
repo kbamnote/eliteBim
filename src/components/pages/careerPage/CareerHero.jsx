@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Briefcase, TrendingUp, Target, Star, ArrowRight, Calendar } from 'lucide-react';
+import { Briefcase, TrendingUp, Target, Star, ArrowRight, Calendar, Users, Award, GraduationCap } from 'lucide-react';
 
 export default function CareerHero() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -8,6 +8,13 @@ export default function CareerHero() {
     { icon: TrendingUp, label: "Career Success Rate", value: "95%" },
     { icon: Star, label: "Average Salary Increase", value: "40%" },
     { icon: Briefcase, label: "Job Placements", value: "2400+" }
+  ];
+
+  const careerBenefits = [
+    { icon: Users, title: "Expert Mentorship", description: "Learn from industry professionals" },
+    { icon: Award, title: "Certification", description: "Get recognized credentials" },
+    { icon: GraduationCap, title: "Skill Development", description: "Master in-demand skills" },
+    { icon: TrendingUp, title: "Career Growth", description: "Accelerate your career" }
   ];
 
   useEffect(() => {
@@ -36,6 +43,11 @@ export default function CareerHero() {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-4">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span className="text-yellow-200 text-sm font-medium">Career Transformation</span>
+              </div>
+              
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
                 Build Your
                 <br />
@@ -54,7 +66,7 @@ export default function CareerHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+              <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
                 <Briefcase className="w-5 h-5" />
                 Explore Careers
               </button>
@@ -62,6 +74,26 @@ export default function CareerHero() {
                 <Calendar className="w-5 h-5" />
                 Get Career Guidance
               </button>
+            </div>
+
+            {/* Career Benefits */}
+            <div className="grid grid-cols-2 gap-4 pt-6 animate-fade-in-up delay-700">
+              {careerBenefits.map((benefit, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-purple-500/30 rounded-lg">
+                      {React.createElement(benefit.icon, { className: "w-5 h-5 text-white" })}
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">{benefit.title}</div>
+                      <div className="text-purple-200 text-xs">{benefit.description}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Stats Section */}
@@ -77,17 +109,6 @@ export default function CareerHero() {
               <div className="text-center animate-fade-in-up delay-700">
                 <div className="text-3xl font-bold text-yellow-300">40%</div>
                 <div className="text-yellow-200 text-sm">Average Salary Increase</div>
-              </div>
-            </div>
-
-            {/* Company Logos Section */}
-            <div className="pt-8 animate-fade-in-up delay-900">
-              <p className="text-yellow-200 text-sm mb-4">Our graduates work at top companies</p>
-              <div className="flex flex-wrap gap-6 items-center opacity-70">
-                <div className="text-white font-bold text-2xl hover:text-yellow-300 transition-colors">WSP</div>
-                <div className="text-white font-bold text-2xl hover:text-pink-300 transition-colors">AECOM</div>
-                <div className="text-white font-bold text-2xl hover:text-yellow-300 transition-colors">Arup</div>
-                <div className="text-white font-bold text-2xl hover:text-pink-300 transition-colors">Bechtel</div>
               </div>
             </div>
           </div>

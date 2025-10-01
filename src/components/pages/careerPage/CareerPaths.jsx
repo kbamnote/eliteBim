@@ -50,7 +50,7 @@ export default function CareerPaths() {
   ];
 
   return (
-    <div className="py-16 lg:py-24 bg-gray-50">
+    <div className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -63,7 +63,7 @@ export default function CareerPaths() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {paths.map((path, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group card-hover animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group card-hover animate-fade-in-up border border-gray-100" style={{animationDelay: `${index * 0.2}s`}}>
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${path.color} p-4 mb-6 group-hover:scale-110 transition-transform`}>
                 <path.icon className="w-8 h-8 text-white" />
               </div>
@@ -71,7 +71,7 @@ export default function CareerPaths() {
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{path.title}</h3>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                     {path.level}
                   </span>
                   <span className="text-sm font-bold text-green-600">{path.salary}</span>
@@ -85,19 +85,19 @@ export default function CareerPaths() {
                 <h4 className="font-semibold text-gray-900 mb-3 text-sm">Key Skills:</h4>
                 <div className="space-y-1">
                   {path.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full inline-block mr-1 mb-1">
+                    <div key={skillIndex} className="text-xs px-2 py-1 bg-purple-50 text-purple-700 rounded-full inline-block mr-1 mb-1">
                       {skill}
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="mb-6 p-3 bg-gray-50 rounded-lg">
+              <div className="mb-6 p-3 bg-purple-50 rounded-lg border border-purple-100">
                 <h4 className="font-semibold text-gray-900 mb-1 text-sm">Career Growth:</h4>
                 <p className="text-xs text-gray-600">{path.growth}</p>
               </div>
               
-              <button className="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 text-sm">
+              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2 text-sm shadow-md">
                 Learn More
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -112,7 +112,7 @@ export default function CareerPaths() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Take our career assessment to discover the BIM career path that matches your interests and skills.
           </p>
-          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
+          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
             Take Career Assessment
           </button>
         </div>

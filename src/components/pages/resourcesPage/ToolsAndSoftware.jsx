@@ -27,9 +27,9 @@ export default function ToolsAndSoftware() {
   ];
 
   return (
-    <div className="py-16 lg:py-24 bg-white">
+    <div className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Tools & Software
           </h2>
@@ -40,12 +40,12 @@ export default function ToolsAndSoftware() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {tools.map((tool, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+            <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               <div className="flex items-center gap-4 mb-6">
                 <img src={tool.logo} alt={tool.name} className="w-16 h-16 rounded-lg object-cover" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">{tool.name}</h3>
-                  <span className="text-sm text-emerald-600 font-semibold">{tool.category}</span>
+                  <span className="text-sm text-purple-600 font-semibold">{tool.category}</span>
                 </div>
               </div>
               
@@ -54,18 +54,18 @@ export default function ToolsAndSoftware() {
               <div className="space-y-2 mb-6">
                 {tool.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-2">
-                    <Settings className="w-4 h-4 text-emerald-500" />
+                    <Settings className="w-4 h-4 text-purple-500" />
                     <span className="text-sm text-gray-600">{feature}</span>
                   </div>
                 ))}
               </div>
               
               <div className="flex gap-2">
-                <button className="flex-1 bg-emerald-600 text-white py-2 rounded-lg font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2">
+                <button className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md flex items-center justify-center gap-2">
                   <Download className="w-4 h-4" />
                   Resources
                 </button>
-                <button className="px-4 py-2 border-2 border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors">
+                <button className="px-4 py-2 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-all">
                   <ExternalLink className="w-4 h-4" />
                 </button>
               </div>

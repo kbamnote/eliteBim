@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, ArrowRight } from 'lucide-react';
+import { Clock, ArrowRight, Calendar, User } from 'lucide-react';
 
 const EventHero = () => {
   const events = [
@@ -76,22 +76,29 @@ const EventHero = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Past Events</h1>
-          <button className="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-sm font-medium">
-            See all <ArrowRight className="w-4 h-4" />
-          </button>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Calendar className="w-6 h-6 text-purple-600" />
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Past Events & Webinars</h1>
+          </div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our collection of past events, webinars, and industry insights from leading experts in BIM and AEC.
+          </p>
         </div>
 
         {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {events.map((event, index) => (
+            <div 
+              key={event.id} 
+              className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               {/* Event Image with Gradient Overlay */}
-              <div className="relative h-40 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-90`}></div>
                 <img 
                   src={event.image} 
@@ -100,36 +107,52 @@ const EventHero = () => {
                 />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4 bg-white rounded-lg px-3 py-2 text-center shadow-md">
-                  <div className="text-xs text-gray-600 font-medium">{event.date}</div>
-                  <div className="text-xs text-gray-500 font-medium">{event.day}</div>
+                  <div className="text-xs font-bold text-gray-900">{event.date}</div>
+                  <div className="text-xs text-gray-600 font-medium">{event.day}</div>
+                </div>
+                
+                {/* Play Icon Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <ArrowRight className="w-8 h-8 text-white" />
+                  </div>
                 </div>
               </div>
 
               {/* Event Content */}
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 line-clamp-3 leading-snug">
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-2 leading-snug">
                   {event.title}
                 </h3>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-400"></div>
+                <div className="flex items-center gap-3 my-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                    <User className="w-5 h-5 text-gray-600" />
+                  </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-gray-900">{event.author}</div>
+                    <div className="font-semibold text-gray-900">{event.author}</div>
                     {event.role && (
-                      <div className="text-xs text-gray-500 truncate">{event.role}</div>
+                      <div className="text-sm text-gray-500 truncate">{event.role}</div>
                     )}
                   </div>
                 </div>
 
                 {/* Watch Recording Button */}
-                <button className="w-full py-2 px-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+                <button className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 shadow-md">
                   Watch Recording
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Load More Button */}
+        <div className="text-center mt-12 animate-fade-in-up delay-500">
+          <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-colors shadow-lg">
+            Load More Events
+          </button>
         </div>
       </div>
     </div>

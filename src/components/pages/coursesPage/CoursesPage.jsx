@@ -9,7 +9,7 @@ import CourseEnrollment from './CourseEnrollment'
 
 const CoursesPage = () => {
   return (
-    <div>
+    <div className="pt-20">
       <CourseHero />
       <CourseOverview />
       <CourseCurriculum />

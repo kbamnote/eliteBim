@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Download, Star, ArrowRight, Play, Users } from 'lucide-react';
+import { BookOpen, Download, Star, ArrowRight, Play, Users, FileText, Video, Lightbulb } from 'lucide-react';
 
 export default function ResourcesHero() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -8,6 +8,13 @@ export default function ResourcesHero() {
     { icon: BookOpen, label: "Resources Available", value: "500+" },
     { icon: Download, label: "Downloads Daily", value: "1000+" },
     { icon: Users, label: "Active Users", value: "15k+" }
+  ];
+
+  const resourceCategories = [
+    { icon: FileText, title: "E-books & Guides", count: "120+" },
+    { icon: Video, title: "Video Tutorials", count: "80+" },
+    { icon: Lightbulb, title: "Best Practices", count: "50+" },
+    { icon: Download, title: "Templates", count: "75+" }
   ];
 
   useEffect(() => {
@@ -63,20 +70,24 @@ export default function ResourcesHero() {
               </button>
             </div>
 
-            {/* Stats Section */}
-            <div className="pt-8 grid grid-cols-3 gap-6">
-              <div className="text-center animate-fade-in-up delay-300">
-                <div className="text-3xl font-bold text-yellow-300">500+</div>
-                <div className="text-yellow-200 text-sm">Resources Available</div>
-              </div>
-              <div className="text-center animate-fade-in-up delay-500">
-                <div className="text-3xl font-bold text-pink-300">1000+</div>
-                <div className="text-yellow-200 text-sm">Downloads Daily</div>
-              </div>
-              <div className="text-center animate-fade-in-up delay-700">
-                <div className="text-3xl font-bold text-yellow-300">24/7</div>
-                <div className="text-yellow-200 text-sm">Access Available</div>
-              </div>
+            {/* Resource Categories */}
+            <div className="grid grid-cols-2 gap-4 pt-6 animate-fade-in-up delay-700">
+              {resourceCategories.map((category, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-purple-500/30 rounded-lg">
+                      {React.createElement(category.icon, { className: "w-5 h-5 text-white" })}
+                    </div>
+                    <div>
+                      <div className="text-white font-bold">{category.count}</div>
+                      <div className="text-purple-200 text-sm">{category.title}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Company Integration Section */}

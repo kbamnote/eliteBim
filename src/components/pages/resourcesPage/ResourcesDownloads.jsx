@@ -27,9 +27,9 @@ export default function ResourcesDownloads() {
   ];
 
   return (
-    <div className="py-16 lg:py-24 bg-gray-50">
+    <div className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Free Downloads
           </h2>
@@ -40,21 +40,21 @@ export default function ResourcesDownloads() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {downloads.map((download, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                <download.icon className="w-8 h-8 text-emerald-600" />
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <download.icon className="w-8 h-8 text-purple-600" />
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-2">{download.title}</h3>
-              <p className="text-emerald-600 font-semibold mb-3">{download.count}</p>
+              <p className="text-purple-600 font-semibold mb-3">{download.count}</p>
               <p className="text-gray-600 mb-6">{download.description}</p>
               
               <div className="flex items-center justify-between mb-6">
                 <span className="text-sm text-gray-500">Size: {download.size}</span>
-                <span className="text-sm text-green-600 font-semibold">Free</span>
+                <span className="text-sm text-purple-600 font-semibold">Free</span>
               </div>
               
-              <button className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2">
+              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md flex items-center justify-center gap-2">
                 <Download className="w-5 h-5" />
                 Download Now
               </button>

@@ -1,7 +1,5 @@
 import React from 'react'
-import Header from './components/common/Header'
 import { Routes, Route } from 'react-router-dom'
-import Footer from './components/common/Footer'
 import LandingPage from './components/pages/landingPage/LandingPage'
 import ImpactPage from './components/pages/impactPage/ImpactPage'
 import ResourcesPage from './components/pages/resourcesPage/ResourcesPage'
@@ -10,13 +8,11 @@ import CoursesPage from './components/pages/coursesPage/CoursesPage'
 import EventsPage from './components/pages/eventsPage/EventsPage'
 import HiringPage from './components/pages/hirePage/HiringPage'
 import NotFound from './components/pages/404/NotFound'
-import Navbar from './components/common/Navbar'
+import MainLayout from './components/layouts/MainLayout'
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Navbar />
+    <MainLayout>
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/courses' element={<CoursesPage />} />
@@ -27,8 +23,7 @@ const App = () => {
         <Route path='/resources' element={<ResourcesPage />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
-      <Footer />
-    </>
+    </MainLayout>
   )
 }
 
