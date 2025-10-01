@@ -173,42 +173,7 @@ const FloatingChat = () => {
       )}
       
       {/* Alternative Contact Options (when chat is closed) */}
-      {!isOpen && (
-        <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg border border-gray-200 w-48 py-2 animate-slide-in-bottom">
-          <a 
-            href="tel:+15551234567" 
-            className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors"
-          >
-            <Phone className="w-4 h-4 text-purple-600" />
-            <span className="text-sm">Call Us</span>
-          </a>
-          <a 
-            href="mailto:info@elitebim.com" 
-            className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors"
-          >
-            <Mail className="w-4 h-4 text-purple-600" />
-            <span className="text-sm">Email Us</span>
-          </a>
-          <button 
-            onClick={() => {
-              setIsOpen(true);
-              setTimeout(() => {
-                const newBotMessage = {
-                  id: messages.length + 1,
-                  text: "Hello! I'm here to help you with any questions about Elite BIM. What would you like to know?",
-                  sender: "bot",
-                  timestamp: new Date()
-                };
-                setMessages(prev => [...prev, newBotMessage]);
-              }, 500);
-            }}
-            className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors w-full text-left"
-          >
-            <MessageCircle className="w-4 h-4 text-purple-600" />
-            <span className="text-sm">Live Chat</span>
-          </button>
-        </div>
-      )}
+    
     </div>
   );
 };
