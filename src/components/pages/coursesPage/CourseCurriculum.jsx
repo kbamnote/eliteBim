@@ -1,58 +1,113 @@
 import React from 'react';
-import { BookOpen, Code, Building, Users } from 'lucide-react';
+import { BookOpen, Building, Wrench, Zap, Search, Settings, Shield, Trophy } from 'lucide-react';
 
 export default function CourseCurriculum() {
   const modules = [
     {
-      phase: "Foundation Phase",
-      duration: "Months 1-2",
+      phase: "Module 1: Introduction to BIM",
+      duration: "1 Week / 10 Hrs",
       icon: BookOpen,
       color: "from-blue-500 to-indigo-600",
       topics: [
-        "BIM Fundamentals & Industry Overview",
-        "Revit Interface & Navigation",
-        "Basic 3D Modeling Techniques",
-        "Project Setup & Templates",
-        "Annotation & Documentation"
+        "What is BIM? Evolution from CAD to BIM",
+        "BIM Dimensions: 3D, 4D, 5D, 6D, 7D",
+        "Standards & Protocols (ISO 19650, NBIMS, PAS 1192)",
+        "Understanding LOD (Level of Development)",
+        "Common Data Environment (CDE) Basics",
+        "Benefits of BIM for Architects, Engineers & Owners"
       ]
     },
     {
-      phase: "Intermediate Phase",
-      duration: "Months 3-4",
-      icon: Code,
+      phase: "Module 2: Revit Architecture",
+      duration: "6 Weeks / 60 Hrs",
+      icon: Building,
       color: "from-purple-500 to-pink-600",
       topics: [
-        "Advanced Modeling Techniques",
-        "Family Creation & Customization",
-        "MEP Systems Integration",
-        "Collaboration Workflows",
-        "Model Coordination Basics"
+        "Revit Interface, Project Setup & Navigation",
+        "Creating Levels, Grids & Views",
+        "Walls, Doors, Windows, Floors, Roofs",
+        "Stairs, Railings, Ceilings, Curtain Walls",
+        "Families (System & Component)",
+        "Detailing, Sheets, Annotations",
+        "Rendering & Visualization"
       ]
     },
     {
-      phase: "Advanced Phase",
-      duration: "Months 5-6",
-      icon: Building,
+      phase: "Module 3: Revit Structure",
+      duration: "4 Weeks / 40 Hrs",
+      icon: Wrench,
       color: "from-green-500 to-emerald-600",
       topics: [
-        "Navisworks & Clash Detection",
-        "4D & 5D BIM Implementation",
-        "Dynamo Visual Programming",
-        "Point Cloud Integration",
-        "VDC Workflows"
+        "Structural Grids, Levels & Columns",
+        "Beams, Trusses, Bracings",
+        "Foundations (Isolated, Combined, Raft, Pile)",
+        "Reinforcement Modeling",
+        "Structural Analysis Basics",
+        "Coordination with Architectural Models"
       ]
     },
     {
-      phase: "Professional Phase",
-      duration: "Month 7",
-      icon: Users,
+      phase: "Module 4: Revit MEP",
+      duration: "5 Weeks / 50 Hrs",
+      icon: Zap,
       color: "from-orange-500 to-red-600",
       topics: [
-        "Industry Live Projects",
-        "Client Presentation Skills",
-        "Portfolio Development",
-        "Job Interview Preparation",
-        "Professional Certification"
+        "MEP Interface & Settings",
+        "HVAC Systems (Ducts, Diffusers, Equipment)",
+        "Plumbing Systems (Pipes, Fixtures, Water Supply & Drainage)",
+        "Fire Protection Systems",
+        "Electrical Systems (Lighting, Power, Circuits, Panels)",
+        "MEP Coordination with Architecture & Structure"
+      ]
+    },
+    {
+      phase: "Module 5: BIM Coordination",
+      duration: "3 Weeks / 30 Hrs",
+      icon: Search,
+      color: "from-teal-500 to-cyan-600",
+      topics: [
+        "Clash Detection in Navisworks / Revit",
+        "Interdisciplinary Coordination Process",
+        "Timeliner (4D Construction Simulation)",
+        "Quantity Take-off (5D Estimation)",
+        "Generating Reports & Schedules",
+        "Issue Tracking & Resolution"
+      ]
+    },
+    {
+      phase: "Module 6: Advanced BIM Tools",
+      duration: "4 Weeks / 40 Hrs",
+      icon: Settings,
+      color: "from-indigo-500 to-purple-600",
+      topics: [
+        "Use of Dynamo for Automation",
+        "InfraWorks for Conceptual Design",
+        "ArchiCAD Overview"
+      ]
+    },
+    {
+      phase: "Module 7: BIM Standards & Management",
+      duration: "4 Weeks / 40 Hrs",
+      icon: Shield,
+      color: "from-rose-500 to-pink-600",
+      topics: [
+        "BIM Execution Plan (BEP)",
+        "ISO 19650 Framework & COBie",
+        "BIM Contracts & Legal Aspects",
+        "Asset Information Modeling (AIM)",
+        "Digital Twins & Facility Management (6D & 7D)",
+        "Case Studies & Best Practices"
+      ]
+    },
+    {
+      phase: "Capstone Project",
+      duration: "2 Weeks / 20 Hrs",
+      icon: Trophy,
+      color: "from-yellow-500 to-orange-600",
+      topics: [
+        "Live Project combining Architecture, Structure & MEP",
+        "Clash Detection, Reports & 4D/5D outputs",
+        "Final Presentation & Evaluation"
       ]
     }
   ];
@@ -66,7 +121,7 @@ export default function CourseCurriculum() {
             Course Curriculum
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Structured learning path designed by industry experts to take you from beginner to professional in 7 months.
+            Comprehensive 29-week program covering all aspects of BIM - from fundamentals to advanced implementation with hands-on projects.
           </p>
         </div>
 
@@ -93,7 +148,7 @@ export default function CourseCurriculum() {
                       <span className="text-purple-600 font-semibold">{module.duration}</span>
                     </div>
                     <span className="bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold">
-                      {module.topics.length} Topics
+                      {module.topics.length} Topic{module.topics.length !== 1 ? 's' : ''}
                     </span>
                   </div>
                   
@@ -114,10 +169,10 @@ export default function CourseCurriculum() {
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Start Your BIM Journey?
+            Ready to Master BIM Technology?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join our next cohort and transform your career with comprehensive BIM training.
+            Complete this comprehensive 29-week program and become a certified BIM professional ready for industry challenges.
           </p>
           <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
             Download Detailed Curriculum

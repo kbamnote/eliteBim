@@ -4,7 +4,7 @@ import WebinarCta from './WebinarCta'
 
 const EventsPage = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       <EventHero />
       <WebinarCta />
     </div>
