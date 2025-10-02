@@ -1,5 +1,5 @@
 import React from "react";
-import bannerVideo from "../../../assets/Upscaler/heroVideo.mp4"; 
+ 
 
 const HeroVideo = () => {
   return (
@@ -7,7 +7,7 @@ const HeroVideo = () => {
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src={bannerVideo}
+        src="https://elite-associates-s3.s3.eu-north-1.amazonaws.com/heroVideo.mp4"
         autoPlay
         loop
         muted
