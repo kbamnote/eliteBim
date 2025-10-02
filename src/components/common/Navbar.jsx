@@ -41,7 +41,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className={`fixed w-full z-40 transition-all duration-300 ${
+    <nav className={`fixed w-full top-12 z-40 transition-all duration-300 ${
       scrolled 
         ? "bg-white/90 backdrop-blur-md shadow-lg py-2" 
         : "bg-white/80 backdrop-blur-sm py-2"
@@ -127,7 +127,7 @@ const Navbar = () => {
       
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg animate-slide-in-top">
+        <div className="md:hidden bg-white shadow-lg animate-slide-in-top mt-12">
           <div className="space-y-2 px-4 py-4 text-gray-700 font-medium">
             <button
               onClick={() => setShowCourses(!showCourses)}

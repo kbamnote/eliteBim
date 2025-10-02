@@ -9,7 +9,7 @@ import ResourcesCTA from './ResourcesCTA'
 
 const ResourcesPage = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       <ResourcesHero />
       <LearningResources />
       <IndustryInsights />

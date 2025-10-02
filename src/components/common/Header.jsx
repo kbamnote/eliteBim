@@ -82,7 +82,7 @@ const Header = () => {
   return (
     <>
       {/* Header Banner */}
-      <div className="w-full bg-gradient-to-r from-red-500 via-purple-500 to-blue-400 text-white flex flex-col sm:flex-row justify-center items-center py-2 px-4 gap-2 sm:gap-4">
+      <div className="fixed top-0 left-0 w-full bg-gradient-to-r from-red-500 via-purple-500 to-blue-400 text-white flex flex-col sm:flex-row justify-center items-center py-2 px-4 gap-2 sm:gap-4 z-50">
         <span className="flex items-center gap-2 font-medium text-sm sm:text-base">
           ⚡ Hurry! Last Chance for Scholarship - Enroll before 30th Sep ⚡
         </span>
