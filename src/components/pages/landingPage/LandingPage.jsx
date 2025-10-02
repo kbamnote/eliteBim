@@ -18,7 +18,9 @@ const LandingPage = () => {
       <div className="pt-24">
         <HeroVideo/>
       </div>
-      <Hero />
+      <div className="-mt-1">
+        <Hero />
+      </div>
       <ImpactSection />
       <CoursesSection />
       <MentorsSection />
