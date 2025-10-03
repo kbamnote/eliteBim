@@ -41,7 +41,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className={`fixed w-full top-12 z-40 transition-all duration-300 ${
+    <nav className={`fixed w-full top-20 sm:top-12 z-40 transition-all duration-300 ${
       scrolled 
         ? "bg-white/90 backdrop-blur-md shadow-lg py-2" 
         : "bg-white/80 backdrop-blur-sm py-2"
@@ -67,7 +67,7 @@ const Navbar = () => {
               >
                 Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
               </button>
-              {showCourses && <CoursesDropdown />}
+              {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             </div>
             
             <Link
@@ -127,7 +127,7 @@ const Navbar = () => {
       
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg animate-slide-in-top mt-12">
+        <div className="md:hidden bg-white shadow-lg animate-slide-in-top mt-20 sm:mt-12">
           <div className="space-y-2 px-4 py-4 text-gray-700 font-medium">
             <button
               onClick={() => setShowCourses(!showCourses)}
@@ -135,7 +135,7 @@ const Navbar = () => {
             >
               Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
             </button>
-            {showCourses && <CoursesDropdown />}
+            {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             
             <Link to="/resources" className="block hover:text-purple-600 py-2">
               Resources

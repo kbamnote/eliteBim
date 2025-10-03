@@ -2,29 +2,30 @@ import React from 'react';
 import { Monitor, Settings, Download, ExternalLink } from 'lucide-react';
 
 export default function ToolsAndSoftware() {
-  const tools = [
-    {
-      name: "Autodesk Revit",
-      category: "BIM Modeling",
-      description: "Industry-leading BIM software for architectural design",
-      features: ["3D Modeling", "Collaboration", "Documentation", "Analysis"],
-      logo: "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?w=80&h=80&fit=crop"
-    },
-    {
-      name: "Navisworks",
-      category: "Project Review",
-      description: "Model coordination and clash detection platform",
-      features: ["Clash Detection", "4D Simulation", "Model Review", "Collaboration"],
-      logo: "https://images.unsplash.com/photo-1596024677829-c4b08c2b0c1f?w=80&h=80&fit=crop"
-    },
-    {
-      name: "AutoCAD",
-      category: "2D/3D Design",
-      description: "Computer-aided design and drafting software",
-      features: ["2D Drafting", "3D Modeling", "Customization", "Automation"],
-      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=80&fit=crop"
-    }
-  ];
+const tools = [
+  {
+    name: "Autodesk Revit",
+    category: "BIM Modeling",
+    description: "Industry-leading BIM software for architectural design",
+    features: ["3D Modeling", "Collaboration", "Documentation", "Analysis"],
+    logo: "https://download.autodesk.com/us/revit/images/revit-og-image.png"
+  },
+  {
+    name: "Navisworks",
+    category: "Project Review",
+    description: "Model coordination and clash detection platform",
+    features: ["Clash Detection", "4D Simulation", "Model Review", "Collaboration"],
+    logo: "https://download.autodesk.com/us/navisworks/images/navisworks-og-image.png"
+  },
+  {
+    name: "AutoCAD",
+    category: "2D/3D Design",
+    description: "Computer-aided design and drafting software",
+    features: ["2D Drafting", "3D Modeling", "Customization", "Automation"],
+    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=80&fit=crop"
+  }
+];
+  
 
   return (
     <div className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 to-indigo-50">

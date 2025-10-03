@@ -4,7 +4,6 @@ import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import FloatingChat from '../common/FloatingChat';
 import ScrollToTop from '../common/ScrollToTop';
-import CookieConsent from '../common/CookieConsent';
 
 const MainLayout = ({ children, showHeader = true, showNavbar = true, showFooter = true }) => {
   return (
@@ -17,7 +16,7 @@ const MainLayout = ({ children, showHeader = true, showNavbar = true, showFooter
       {showFooter && <Footer />}
       <FloatingChat />
       <ScrollToTop />
-      <CookieConsent />
+     
     </div>
   );
 };

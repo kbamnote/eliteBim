@@ -8,6 +8,7 @@ import HeroVideo from "./HeroVideo"
 import ImpactSection from "./ImpactSection"
 import MentorsSection from "./MentorsSection"
 import NextChapter from "./NextChapter"
+import OurTeam from "./OurTeam"
 import Press from "./Press"
 import ProjectsSection from "./ProjectSection"
 import TestimonialSection from "./TestimonialSection"
@@ -15,14 +16,14 @@ import TestimonialSection from "./TestimonialSection"
 const LandingPage = () => {
   return (
     <div>
-      <div className="pt-24">
+     <div className="mt-36 sm:mt-24 lg:mt-30">
         <HeroVideo/>
-      </div>
-      <div className="-mt-1">
+        </div>
         <Hero />
-      </div>
+  
       <ImpactSection />
       <CoursesSection />
+      <OurTeam />
       <MentorsSection />
       <ProjectsSection />
       <TestimonialSection />
