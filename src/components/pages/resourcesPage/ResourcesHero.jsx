@@ -5,9 +5,9 @@ export default function ResourcesHero() {
   const [currentStat, setCurrentStat] = useState(0);
   
   const stats = [
-    { icon: BookOpen, label: "Resources Available", value: "500+" },
-    { icon: Download, label: "Downloads Daily", value: "1000+" },
-    { icon: Users, label: "Active Users", value: "15k+" }
+    { icon: BookOpen, label: "BIM Resources Available", value: "500+" },
+    { icon: Download, label: "BIM Downloads Daily", value: "1000+" },
+    { icon: Users, label: "Active BIM Users", value: "15k+" }
   ];
 
   const resourceCategories = [
@@ -54,7 +54,7 @@ export default function ResourcesHero() {
               </h1>
               
               <p className="text-yellow-200 text-lg lg:text-xl max-w-xl">
-                Comprehensive collection of BIM resources, tools, templates, and learning materials to accelerate your professional growth and project success.
+                Comprehensive collection of BIM resources, tools, templates, and learning materials to accelerate your professional growth and project success in Building Information Modeling.
               </p>
             </div>
 
@@ -62,11 +62,11 @@ export default function ResourcesHero() {
             <div className="flex flex-wrap gap-4">
               <button className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
                 <BookOpen className="w-5 h-5" />
-                Browse Resources
+                Browse BIM Resources
               </button>
               <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
                 <Download className="w-5 h-5" />
-                Free Downloads
+                Free BIM Downloads
               </button>
             </div>
 
@@ -92,7 +92,7 @@ export default function ResourcesHero() {
 
             {/* Company Integration Section */}
             <div className="pt-8 animate-fade-in-up delay-900">
-              <p className="text-yellow-200 text-sm mb-4">Trusted by professionals worldwide</p>
+              <p className="text-yellow-200 text-sm mb-4">Trusted by BIM professionals worldwide</p>
               <div className="flex flex-wrap gap-6 items-center opacity-70">
                 <div className="text-white font-bold text-2xl hover:text-yellow-300 transition-colors">Autodesk</div>
                 <div className="text-white font-bold text-2xl hover:text-pink-300 transition-colors">Revit</div>
@@ -106,19 +106,19 @@ export default function ResourcesHero() {
           <div className="relative animate-fade-in-right">
             {/* Main Grid of Resource Icons */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center group">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center group" role="img" aria-label="BIM e-books and guides">
                 <BookOpen className="w-20 h-20 text-white group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center group">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center group" role="img" aria-label="BIM download resources">
                 <Download className="w-20 h-20 text-white group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-purple-700 to-pink-600 flex items-center justify-center group">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-purple-700 to-pink-600 flex items-center justify-center group" role="img" aria-label="BIM video tutorials">
                 <Play className="w-20 h-20 text-white group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
-              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-pink-600 to-purple-700 flex items-center justify-center group">
+              <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-pink-600 to-purple-700 flex items-center justify-center group" role="img" aria-label="BIM best practices and guidelines">
                 <Star className="w-20 h-20 text-white group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
@@ -132,28 +132,28 @@ export default function ResourcesHero() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">50+</div>
-                  <div className="text-sm text-purple-200">New This Month</div>
+                  <div className="text-sm text-purple-200">New BIM Resources This Month</div>
                 </div>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-white text-sm">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>Templates</span>
+                  <span>BIM Templates</span>
                 </div>
                 <div className="flex items-center gap-2 text-white text-sm">
                   <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-300"></div>
-                  <span>Tutorials</span>
+                  <span>BIM Tutorials</span>
                 </div>
                 <div className="flex items-center gap-2 text-white text-sm">
                   <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-600"></div>
-                  <span>Guidelines</span>
+                  <span>BIM Guidelines</span>
                 </div>
               </div>
             </div>
 
             {/* Downloads Card */}
             <div className="absolute bottom-8 -left-4 bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl p-5 shadow-2xl border border-purple-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform animate-float-delayed">
-              <div className="text-lg font-semibold text-white mb-3">Popular Downloads</div>
+              <div className="text-lg font-semibold text-white mb-3">Popular BIM Downloads</div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   {React.createElement(stats[currentStat].icon, { className: "w-5 h-5 text-purple-300" })}

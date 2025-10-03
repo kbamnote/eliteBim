@@ -18,6 +18,30 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white pt-16 pb-6 border-t border-purple-400/30 relative overflow-hidden">
+      {/* Structured Data for Organization */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Elite BIM",
+            "url": "https://elitebim.com",
+            "logo": "https://elitebim.com/src/assets/eliteLogo.jpg",
+            "sameAs": [
+              "https://www.instagram.com/elitebim",
+              "https://www.facebook.com/elitebim",
+              "https://www.linkedin.com/company/elitebim",
+              "https://www.youtube.com/elitebim"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-555-123-4567",
+              "contactType": "customer service"
+            }
+          }
+        `}
+      </script>
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -29,12 +53,12 @@ const Footer = () => {
         {/* Company Info */}
         <div className="space-y-6 lg:col-span-1">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Elite BIM Logo" className="h-16 w-auto" />
+            <img src={logo} alt="Elite BIM Logo - Building Information Modeling Education" className="h-16 w-auto" />
             
           </div>
           
           <p className="text-purple-200 max-w-md">
-            Empowering next-generation architects and engineers with industry-leading BIM certification courses.
+            Empowering next-generation architects and engineers with industry-leading BIM certification courses in Building Information Modeling.
           </p>
           
           <div className="space-y-3">
@@ -54,16 +78,16 @@ const Footer = () => {
           
           {/* Social Icons */}
           <div className="flex gap-4 mt-4">
-            <a href="#" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110">
+            <a href="https://instagram.com/elitebim" target="_blank" rel="noopener noreferrer" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110" aria-label="Follow us on Instagram">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110">
+            <a href="https://facebook.com/elitebim" target="_blank" rel="noopener noreferrer" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110" aria-label="Follow us on Facebook">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110">
+            <a href="https://linkedin.com/company/elitebim" target="_blank" rel="noopener noreferrer" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110" aria-label="Connect with us on LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110">
+            <a href="https://youtube.com/elitebim" target="_blank" rel="noopener noreferrer" className="bg-purple-700 hover:bg-purple-600 p-2 rounded-full transition-all transform hover:scale-110" aria-label="Subscribe to our YouTube channel">
               <Youtube className="w-5 h-5" />
             </a>
           </div>
@@ -73,25 +97,25 @@ const Footer = () => {
         <div className="lg:col-span-1">
           <h3 className="text-xl font-bold text-yellow-300 mb-6">Quick Links</h3>
           <ul className="space-y-3">
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> About Us</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Our Courses</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Career Support</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Success Stories</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Events & Webinars</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Blog</a></li>
+            <li><a href="/about" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> About Us</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Our BIM Courses</a></li>
+            <li><a href="/career" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Career Support</a></li>
+            <li><a href="/impact" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Success Stories</a></li>
+            <li><a href="/events" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Events & Webinars</a></li>
+            <li><a href="/resources" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> BIM Blog</a></li>
           </ul>
         </div>
 
         {/* Courses */}
         <div className="lg:col-span-1">
-          <h3 className="text-xl font-bold text-yellow-300 mb-6">Our Courses</h3>
+          <h3 className="text-xl font-bold text-yellow-300 mb-6">Our BIM Courses</h3>
           <ul className="space-y-3">
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> BIM Professional for Architects</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> BIM for Civil Engineers</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> MEP Engineering with BIM</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> Computational Design</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> Advanced Interior Design</a></li>
-            <li><a href="#" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> All Courses</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> BIM Professional for Architects</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> BIM for Civil Engineers</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> MEP Engineering with BIM</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> Computational Design</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> Advanced Interior Design</a></li>
+            <li><a href="/courses" className="text-purple-200 hover:text-yellow-300 transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span> All BIM Courses</a></li>
           </ul>
         </div>
 
@@ -99,7 +123,7 @@ const Footer = () => {
         <div className="lg:col-span-1">
           <h3 className="text-xl font-bold text-yellow-300 mb-6">Join Our Newsletter</h3>
           <p className="text-purple-200 mb-4">
-            Stay updated with the latest BIM trends, course offerings, and industry insights.
+            Stay updated with the latest BIM trends, course offerings, and industry insights in Building Information Modeling.
           </p>
           
           <form onSubmit={handleSubscribe} className="space-y-4">
@@ -112,6 +136,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="w-full pl-10 pr-4 py-3 rounded-lg bg-purple-800/50 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
                 required
+                aria-label="Email for newsletter subscription"
               />
             </div>
             <button
@@ -140,7 +165,7 @@ const Footer = () => {
           <div className="mt-8 p-4 bg-purple-800/30 rounded-xl border border-purple-400/30 backdrop-blur-sm">
             <h4 className="font-bold text-yellow-300 mb-2">Download Our Brochure</h4>
             <p className="text-purple-200 text-sm mb-3">
-              Get detailed information about our courses and career opportunities.
+              Get detailed information about our BIM courses and career opportunities in Building Information Modeling.
             </p>
             <button className="text-sm bg-white text-purple-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Download PDF
@@ -152,10 +177,10 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="relative z-10 border-t border-purple-400/30 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-purple-300 px-6 lg:px-12">
         <div className="flex flex-wrap gap-4 mb-4 md:mb-0">
-          <a href="#" className="hover:text-yellow-300 transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-yellow-300 transition-colors">Terms of Use</a>
-          <a href="#" className="hover:text-yellow-300 transition-colors">Cookie Policy</a>
-          <a href="#" className="hover:text-yellow-300 transition-colors">Sitemap</a>
+          <a href="/privacy-policy" className="hover:text-yellow-300 transition-colors">Privacy Policy</a>
+          <a href="/terms-of-use" className="hover:text-yellow-300 transition-colors">Terms of Use</a>
+          <a href="/cookie-policy" className="hover:text-yellow-300 transition-colors">Cookie Policy</a>
+          <a href="/sitemap.xml" className="hover:text-yellow-300 transition-colors">Sitemap</a>
         </div>
         <p className="text-center md:text-right">
           © {new Date().getFullYear()} Elite BIM. All Rights Reserved

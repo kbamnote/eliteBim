@@ -67,11 +67,11 @@ export default function LearningResources() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Learning Resources
+            BIM Learning Resources
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Accelerate your BIM expertise with our comprehensive collection of learning materials, 
-            from beginner tutorials to advanced masterclasses.
+            from beginner tutorials to advanced masterclasses. Free resources for architects and engineers.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function LearningResources() {
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
                 <span className="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
-                  {category.count}
+                  {category.count} Resources
                 </span>
               </div>
               
@@ -111,7 +111,7 @@ export default function LearningResources() {
         {/* Featured Resources */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Featured Resources
+            Featured BIM Resources
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -120,7 +120,7 @@ export default function LearningResources() {
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src={resource.image} 
-                    alt={resource.title}
+                    alt={`${resource.title} - BIM Learning Resource`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.target.src = "https://images.unsplash.com/photo-1553028826-f4804a6dfd3f?w=400&h=250&fit=crop&q=80";
@@ -145,7 +145,7 @@ export default function LearningResources() {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-semibold text-gray-700">{resource.rating}</span>
+                      <span className="text-sm font-semibold text-gray-700">{resource.rating}/5.0</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Download className="w-4 h-4 text-gray-400" />

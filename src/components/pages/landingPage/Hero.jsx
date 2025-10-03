@@ -53,21 +53,21 @@ export default function Hero() {
               </h1>
               
               <p className="text-yellow-200 text-lg lg:text-xl max-w-xl">
-                Online certification courses that set you up for success. Gain
-                industry-relevant skills with cohort-based learning.
+                Online BIM certification courses that set you up for success. Gain
+                industry-relevant skills with cohort-based learning in Building Information Modeling.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
-                Explore Courses
+              <a href="/courses" className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+                Explore BIM Courses
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
+              </a>
+              <a href="/career" className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
                 Request a Call Back
                 <Phone className="w-5 h-5" />
-              </button>
+              </a>
             </div>
 
             {/* Company Logos Section */}
@@ -90,14 +90,14 @@ export default function Hero() {
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="Professional BIM architect working on design"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="BIM engineer using Revit software"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -106,14 +106,14 @@ export default function Hero() {
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="Construction professional using BIM tools"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="Female engineer working on BIM project"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -122,14 +122,14 @@ export default function Hero() {
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="Male architect using BIM software"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" 
-                  alt="Professional"
+                  alt="Professional working on digital construction model"
                   className="w-full h-full object-cover"
                 />
               </div>

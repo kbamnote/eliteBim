@@ -1,62 +1,63 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Search, Home } from 'lucide-react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Home, Search } from 'lucide-react';
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 relative overflow-hidden flex items-center justify-center">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-36 h-36 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
-      </div>
-
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-16">
-        <div className="mb-8 animate-fade-in-up">
-          <h1 className="text-9xl font-bold text-white mb-4">404</h1>
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300 mb-6">
-            Page Not Found
-          </h2>
-          <p className="text-xl text-yellow-200 max-w-2xl mx-auto mb-10">
-            Oops! The page you're looking for seems to have vanished into the digital ether. 
-            Let's get you back on track.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-300">
-          <Link 
-            to="/" 
-            className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl"
-          >
-            <Home className="w-5 h-5" />
-            Back to Home
-          </Link>
-          <button 
-            onClick={() => window.history.back()}
-            className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Go Back
-          </button>
-        </div>
-
-        <div className="mt-16 animate-fade-in-up delay-500">
-          <div className="relative max-w-md mx-auto">
-            <input
-              type="text"
-              placeholder="Search our site..."
-              className="w-full px-6 py-4 pl-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            />
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/70" />
+    <>
+      <Helmet>
+        <title>Page Not Found - Elite BIM</title>
+        <meta name="description" content="Sorry, the page you're looking for doesn't exist. Explore our BIM certification courses for architects and engineers." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8 text-center">
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full w-24 h-24 flex items-center justify-center">
+              <Search className="w-12 h-12" />
+            </div>
           </div>
-          <p className="text-purple-200 mt-4 text-sm">
-            Or try searching for what you're looking for
-          </p>
+          
+          <div>
+            <h1 className="text-6xl font-extrabold text-gray-900 mb-2">404</h1>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Sorry, we couldn't find the page you're looking for. It might have been removed, had its name changed, or is temporarily unavailable.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/" 
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                <Home className="w-5 h-5" />
+                Back to Home
+              </Link>
+              
+              <Link 
+                to="/courses" 
+                className="flex items-center justify-center gap-2 bg-white text-purple-600 border border-purple-200 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-all"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Explore Courses
+              </Link>
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Popular Pages</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <Link to="/courses" className="text-purple-600 hover:text-purple-800 text-sm">BIM Courses</Link>
+              <Link to="/resources" className="text-purple-600 hover:text-purple-800 text-sm">Learning Resources</Link>
+              <Link to="/career" className="text-purple-600 hover:text-purple-800 text-sm">Career Support</Link>
+              <Link to="/events" className="text-purple-600 hover:text-purple-800 text-sm">Events</Link>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default NotFound
+export default NotFound;
