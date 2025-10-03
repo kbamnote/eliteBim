@@ -9,7 +9,7 @@ import CareerCTA from './CareerCTA'
 
 const CareerPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-32 sm:pt-24">
       <CareerHero />
       <CareerPaths />
       <SkillDevelopment />

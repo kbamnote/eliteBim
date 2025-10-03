@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CoursesDropdown = () => {
+const CoursesDropdown = ({ onClose }) => {
   return (
     <div className="absolute left-0 top-full mt-2 w-[400px] bg-white shadow-xl rounded-lg p-6 z-50">
       <div className="border rounded-lg p-4 hover:shadow-md transition group">
@@ -22,6 +22,7 @@ const CoursesDropdown = () => {
           </div>
           <Link
             to="/courses"
+            onClick={onClose}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg"
           >
             Explore Course
