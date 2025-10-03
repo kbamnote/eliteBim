@@ -3,18 +3,18 @@ import CourseHero from './CourseHero'
 import CourseOverview from './CourseOverview'
 import CourseCurriculum from './CourseCurriculum'
 import CourseBenefits from './CourseBenefits'
-import CourseInstructors from './CourseInstructors'
 import CourseTestimonials from './CourseTestimonials'
 import CourseEnrollment from './CourseEnrollment'
+import OurTeam from '../landingPage/OurTeam'
 
 const CoursesPage = () => {
   return (
-    <div className="pt-32 sm:pt-24">
+    <div className="">
       <CourseHero />
       <CourseOverview />
       <CourseCurriculum />
       <CourseBenefits />
-      <CourseInstructors />
+    <OurTeam/>
       <CourseTestimonials />
       <CourseEnrollment />
     </div>

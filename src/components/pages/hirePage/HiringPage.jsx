@@ -10,7 +10,7 @@ import TestimonalsComp from './TestimonalsComp'
 
 const HiringPage = () => {
   return (
-    <div className="pt-32 sm:pt-24">
+    <div className="">
       <HireHeroComp />
       <AecHiringComp />
       <CompaniesComp />
