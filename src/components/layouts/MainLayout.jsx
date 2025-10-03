@@ -10,8 +10,11 @@ const MainLayout = ({ children, showHeader = true, showNavbar = true, showFooter
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
       {showHeader && <Header />}
       {showNavbar && <Navbar />}
-      <main className="relative">
-        {children}
+      <main className="relative pt-20 sm:pt-12">
+        {/* Add extra padding when header is shown to account for the fixed header banner */}
+        <div className={showHeader ? "pt-12" : ""}>
+          {children}
+        </div>
       </main>
       {showFooter && <Footer />}
       <FloatingChat />

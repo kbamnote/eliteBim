@@ -13,7 +13,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://elitebim.com/courses.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://elitebim.com/resources</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elitebim.com/resources.html</loc>
     <lastmod>2025-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -25,7 +37,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://elitebim.com/career.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://elitebim.com/impact</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elitebim.com/impact.html</loc>
     <lastmod>2025-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37,7 +61,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://elitebim.com/hire.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://elitebim.com/events</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elitebim.com/events.html</loc>
     <lastmod>2025-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
