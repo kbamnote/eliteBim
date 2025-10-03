@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import logo from "../../assets/eliteLogo1.png";
 import { Link, useLocation } from "react-router-dom";
 import CoursesDropdown from "./dropdown/CoursesDropdown";
 
@@ -50,7 +51,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <Link to="/" className="flex items-center">
-              <img src="https://elite-associates-s3.s3.eu-north-1.amazonaws.com/eliteLogo1.png" alt="Elite BIM Logo" className="h-15 w-auto" />
+              <img src={logo} alt="Elite BIM Logo" className="h-15 w-auto" />
             </Link>
           </div>
           
