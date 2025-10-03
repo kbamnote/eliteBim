@@ -1,10 +1,10 @@
 import React from 'react'
 import HireHeroComp from './HireHeroComp'
-import CompaniesComp from './CompaniesComp'
 import AecHiringComp from './AecHiringComp'
-import HiringWithEliteComp from './HiringWithEliteComp'
+import CompaniesComp from './CompaniesComp'
 import TalentForEveryoneComp from './TalentForEveryoneComp'
 import VarietyOfTalentComp from './VarietyOfTalentComp'
+import HiringWithEliteComp from './HiringWithEliteComp'
 import WhyEliteStandoutComp from './WhyEliteStandoutComp'
 import TestimonalsComp from './TestimonalsComp'
 
@@ -12,11 +12,11 @@ const HiringPage = () => {
   return (
     <div className="pt-32 sm:pt-24">
       <HireHeroComp />
-      <CompaniesComp />
       <AecHiringComp />
-      <HiringWithEliteComp />
+      <CompaniesComp />
       <TalentForEveryoneComp />
       <VarietyOfTalentComp />
+      <HiringWithEliteComp />
       <WhyEliteStandoutComp />
       <TestimonalsComp />
     </div>

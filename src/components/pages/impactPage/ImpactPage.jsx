@@ -1,26 +1,25 @@
 import React from 'react'
 import ImpactHero from './ImpactHero'
-import ImpactTestimonial from './ImpactTestimonial'
+import CompanyStats from './CompanyStats'
+import ProjectShowCase from './ProjectShowCase'
+import HiringStats from './HiringStats'
 import ImpactAlumni from './ImpactAlumni'
 import ImpactCommunity from './ImpactCommunity'
-import ProjectsShowCase from './ProjectShowCase'
-import HiringStats from './HiringStats'
-import CompanyStats from './CompanyStats'
+import ImpactTestimonial from './ImpactTestimonial'
 import ImpactPress from './ImpactPress'
 
 const ImpactPage = () => {
   return (
-    <>
-    <ImpactHero/>
-    <ImpactTestimonial/>
-    <ImpactAlumni/>
-    <ImpactCommunity/>
-    <ProjectsShowCase/>
-    <HiringStats/>
-    <CompanyStats/>
-    <ImpactPress/>
-
-    </>
+    <div className="pt-32 sm:pt-24">
+      <ImpactHero />
+      <CompanyStats />
+      <ProjectShowCase />
+      <HiringStats />
+      <ImpactAlumni />
+      <ImpactCommunity />
+      <ImpactTestimonial />
+      <ImpactPress />
+    </div>
   )
 }
 

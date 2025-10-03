@@ -38,7 +38,7 @@ export default function CourseHero() {
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-4 py-2 rounded-full text-sm font-bold">
-                  Most Popular Course
+                  Most Popular BIM Course
                 </span>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -59,8 +59,8 @@ export default function CourseHero() {
               </h1>
               
               <p className="text-yellow-200 text-lg lg:text-xl max-w-xl">
-                Master BIM technology with industry experts. From fundamentals to advanced techniques, 
-                become a certified BIM professional in 7 months.
+                Master Building Information Modeling technology with industry experts. From fundamentals to advanced techniques, 
+                become a certified BIM professional in 7 months with hands-on project experience.
               </p>
             </div>
 
@@ -99,25 +99,25 @@ export default function CourseHero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
-                Enroll Now
+                Enroll in BIM Course
                 <CheckCircle className="w-5 h-5" />
               </button>
               <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
                 <PlayCircle className="w-5 h-5" />
-                Watch Preview
+                Watch Course Preview
               </button>
             </div>
 
             {/* Upcoming Batch Info */}
             <div className="bg-gradient-to-r from-purple-800/50 to-indigo-800/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 animate-fade-in-up delay-700">
-              <h3 className="text-white font-bold text-lg mb-2">🚀 Next Batch Starting Soon!</h3>
-              <p className="text-purple-200 text-sm mb-3">Join 50+ professionals in our November cohort</p>
+              <h3 className="text-white font-bold text-lg mb-2">🚀 Next BIM Batch Starting Soon!</h3>
+              <p className="text-purple-200 text-sm mb-3">Join 50+ professionals in our November cohort for BIM training</p>
               <div className="flex items-center gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-green-300">15 spots left</span>
                 </div>
-                <div className="text-yellow-200">Early bird discount: 20% off</div>
+                <div className="text-yellow-200">Early bird discount: 20% off BIM course</div>
               </div>
             </div>
           </div>
@@ -126,27 +126,27 @@ export default function CourseHero() {
           <div className="relative animate-fade-in-right">
             {/* Video/Preview Container */}
             <div className="relative bg-gradient-to-br from-purple-700 to-indigo-800 rounded-3xl p-8 shadow-2xl border-4 border-purple-400/30">
-              <div className="aspect-video bg-gray-900 rounded-2xl mb-6 flex items-center justify-center group cursor-pointer hover:bg-gray-800 transition-colors">
+              <div className="aspect-video bg-gray-900 rounded-2xl mb-6 flex items-center justify-center group cursor-pointer hover:bg-gray-800 transition-colors" role="img" aria-label="BIM course preview video">
                 <PlayCircle className="w-20 h-20 text-white group-hover:scale-110 transition-transform" />
               </div>
               
-              <h3 className="text-white text-xl font-bold mb-4">Course Preview</h3>
+              <h3 className="text-white text-xl font-bold mb-4">BIM Course Preview</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-purple-200">Live project-based learning</span>
+                  <span className="text-purple-200">Live project-based BIM learning</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-purple-200">Industry expert mentorship</span>
+                  <span className="text-purple-200">Industry expert BIM mentorship</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-purple-200">Job placement assistance</span>
+                  <span className="text-purple-200">BIM job placement assistance</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-purple-200">Lifetime access to resources</span>
+                  <span className="text-purple-200">Lifetime access to BIM resources</span>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function CourseHero() {
             <div className="absolute bottom-8 -left-4 bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl p-5 shadow-2xl border border-purple-400/30 backdrop-blur-sm transform hover:scale-105 transition-transform animate-float-delayed">
               <div className="text-lg font-semibold text-white mb-2">Success Rate</div>
               <div className="text-3xl font-bold text-white">95%</div>
-              <div className="text-sm text-purple-200">Job Placement</div>
+              <div className="text-sm text-purple-200">BIM Job Placement</div>
             </div>
 
             {/* Decorative Elements */}

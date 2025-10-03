@@ -45,13 +45,13 @@ const Navbar = () => {
       scrolled 
         ? "bg-white/90 backdrop-blur-md shadow-lg py-2" 
         : "bg-white/80 backdrop-blur-sm py-2"
-    }`}>
+    }`} role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="Elite BIM Logo" className="h-15 w-auto" />
+            <Link to="/" className="flex items-center" aria-label="Elite BIM - Building Information Modeling Education">
+              <img src={logo} alt="Elite BIM Logo - BIM Certification Courses" className="h-15 w-auto" />
             </Link>
           </div>
           
@@ -64,8 +64,10 @@ const Navbar = () => {
                 className={`flex items-center gap-1 hover:text-purple-600 transition-colors ${
                   location.pathname === "/courses" ? "text-purple-600" : ""
                 }`}
+                aria-haspopup="true"
+                aria-expanded={showCourses}
               >
-                Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
+                BIM Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
               </button>
               {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             </div>
@@ -76,7 +78,7 @@ const Navbar = () => {
                 location.pathname === "/resources" ? "text-purple-600" : ""
               }`}
             >
-              Resources 
+              BIM Resources 
             </Link>
             
             <Link 
@@ -85,7 +87,7 @@ const Navbar = () => {
                 location.pathname === "/hire" ? "text-purple-600" : ""
               }`}
             >
-              Hire From Us
+              Hire BIM Professionals
             </Link>
             
             <Link 
@@ -94,7 +96,7 @@ const Navbar = () => {
                 location.pathname === "/events" ? "text-purple-600" : ""
               }`}
             >
-              Events
+              BIM Events
             </Link>
             
             <Link 
@@ -118,7 +120,7 @@ const Navbar = () => {
           
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)}>
+            <button onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -132,21 +134,22 @@ const Navbar = () => {
             <button
               onClick={() => setShowCourses(!showCourses)}
               className="flex items-center gap-1 w-full hover:text-purple-600 py-2"
+              aria-expanded={showCourses}
             >
-              Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
+              BIM Courses <ChevronDown size={16} className={`${showCourses ? "rotate-180" : ""} transition-transform`} />
             </button>
             {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             
             <Link to="/resources" className="block hover:text-purple-600 py-2">
-              Resources
+              BIM Resources
             </Link>
             
             <Link to="/hire" className="block hover:text-purple-600 py-2">
-              Hire From Us
+              Hire BIM Professionals
             </Link>
             
             <Link to="/events" className="block hover:text-purple-600 py-2">
-              Events
+              BIM Events
             </Link>
             
             <Link to="/impact" className="block hover:text-purple-600 py-2">
