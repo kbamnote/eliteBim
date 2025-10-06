@@ -8,7 +8,8 @@ export default function ContactPage() {
     email: '',
     phoneNo: '',
     experience: '',
-    specialisation: ''
+    specialisation: '',
+    productCompany: 'Elite-BIM'
   });
 
   const [status, setStatus] = useState({
@@ -48,7 +49,8 @@ export default function ContactPage() {
         email: '',
         phoneNo: '',
         experience: '',
-        specialisation: ''
+        specialisation: '',
+        productCompany: 'Elite-BIM'
       });
       
       setTimeout(() => {
@@ -86,8 +88,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-2">Get in touch via email</p>
-              <a href="mailto:info@elitebim.com" className="text-purple-600 font-semibold hover:underline">
-                info@elitebim.com
+              <a href="mailto:eliteassociate3@gmail.com" className="text-purple-600 font-semibold hover:underline">
+                eliteassociate3@gmail.com
               </a>
             </div>
 

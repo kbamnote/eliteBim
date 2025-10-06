@@ -9,7 +9,8 @@ const Header = () => {
     email: '',
     phoneNo: '',
     experience: '',
-    specialisation: ''
+    specialisation: '',
+    productCompany: 'Elite-BIM'
   });
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [status, setStatus] = useState({
@@ -56,7 +57,8 @@ const Header = () => {
         email: '',
         phoneNo: '',
         experience: '',
-        specialisation: ''
+        specialisation: '',
+        productCompany: 'Elite-BIM'
       });
       setAgreedToTerms(false);
       

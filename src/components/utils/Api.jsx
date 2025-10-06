@@ -6,7 +6,7 @@ const Api = axios.create({
 
 
 export const addDetail = (detail) => {
-    return Api.post("bim-enquiry/create-form", detail);
+    return Api.post("form/create-form", detail);
 }
 
 
