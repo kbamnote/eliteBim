@@ -94,9 +94,9 @@ User-agent: Claude-Web
 Disallow: /
 
 # Sitemap location (update with actual URL)
-Sitemap: https://elitebim.com/sitemap.xml
-Sitemap: https://elitebim.com/sitemap-images.xml
-Sitemap: https://elitebim.com/sitemap-videos.xml
+Sitemap: https://www.elitebim.in/sitemap.xml
+Sitemap: https://www.elitebim.in/sitemap-images.xml
+Sitemap: https://www.elitebim.in/sitemap-videos.xml
 
 # Host (specify preferred domain)
-Host: https://elitebim.com
+Host: https://www.elitebim.in
