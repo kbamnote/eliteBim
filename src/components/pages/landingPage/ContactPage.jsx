@@ -98,9 +98,9 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Call Us</h3>
-              <p className="text-gray-600 text-sm mb-2">Mon-Fri from 9am to 6pm</p>
-              <a href="tel:+911234567890" className="text-purple-600 font-semibold hover:underline">
-                +91 123 456 7890
+              <p className="text-gray-600 text-sm mb-2">Mon-Fri from 10am to 6pm</p>
+              <a href="tel:+918855885807" className="text-purple-600 font-semibold hover:underline">
+                +91 8855885807 / 9730893320
               </a>
             </div>
 
@@ -110,8 +110,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Visit Us</h3>
               <p className="text-gray-600 text-sm">
-                123 BIM Street, Tech Park<br />
-                Nagpur, Maharashtra, India
+               1st Floor Mohota Complex, Above State Bank Of India, Katol Road, Chhaoni Rd, Nagpur, Maharashtra, 440013
               </p>
             </div>
           </div>
