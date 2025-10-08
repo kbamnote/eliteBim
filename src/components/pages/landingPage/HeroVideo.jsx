@@ -1,4 +1,5 @@
 import React from "react";
+import video from "../../../assets/AZnCFLir4FBEChxIN6ExUA-AZnCFLirGS4UcxzWJqhJaw.mp4"
  
 
 const HeroVideo = () => {
@@ -6,7 +7,7 @@ const HeroVideo = () => {
     <div className="relative w-full overflow-hidden" style={{ height: "calc(100vh - 6rem)" }}>
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://elite-india-s3.s3.ap-south-1.amazonaws.com/heroVideo.mp4"
+        src={video}
         autoPlay
         loop
         muted

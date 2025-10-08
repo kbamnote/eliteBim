@@ -12,7 +12,7 @@ export default function CourseOverview() {
     {
       icon: Users,
       title: "Expert BIM Mentorship",
-      description: "Learn from BIM professionals at WSP, AECOM, and Arup with real project experience",
+      description: "Learn from BIM professionals at Tecture,Wsp with real project experience",
       color: "from-purple-500 to-pink-600"
     },
     {
