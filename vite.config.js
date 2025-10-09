@@ -19,9 +19,18 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true
       }
-    }
+    },
+    // Optimize chunk size to reduce loading time
+    chunkSizeWarningLimit: 1000,
+    // Enable source maps for better debugging in production
+    sourcemap: false
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
+  },
+  // Performance optimizations
+  esbuild: {
+    // Remove console logs and debugger statements
+    drop: ['console', 'debugger']
   }
 })

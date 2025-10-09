@@ -1,0 +1,21 @@
+{
+  "name": "Elite BIM - BIM Certification Training Institute",
+  "short_name": "Elite BIM",
+  "description": "India's leading BIM certification and training institute. Master Revit, Navisworks & BIM technology with expert mentors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e40af",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "training", "technology"],
+  "lang": "en-IN",
+  "scope": "/"
+}

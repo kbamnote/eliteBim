@@ -413,3 +413,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+/* Performance improvements */
+/* Use will-change for animated elements */
+.animate-fade-in-up,
+.animate-fade-in-right,
+.animate-float,
+.animate-float-delayed,
+.animate-spin-slow,
+.animate-bounce-slow,
+.animate-ping-slow {
+  will-change: transform, opacity;
+}
+
+/* Optimize transforms for better performance */
+.card-hover {
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Use transform3d for hardware acceleration */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
