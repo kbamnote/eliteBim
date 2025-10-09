@@ -5,6 +5,9 @@ import ImpactPage from './components/pages/impactPage/ImpactPage'
 import ResourcesPage from './components/pages/resourcesPage/ResourcesPage'
 import CareerPage from './components/pages/careerPage/CareerPage'
 import CoursesPage from './components/pages/coursesPage/CoursesPage'
+import StructureCoursePage from './components/pages/structureCoursePage/StructureCoursePage'
+import ArchitectureCoursePage from './components/pages/architectureCoursePage/ArchitectureCoursePage'
+import MEPFCoursePage from './components/pages/mepfCoursePage/MEPFCoursePage'
 import EventsPage from './components/pages/eventsPage/EventsPage'
 import HiringPage from './components/pages/hirePage/HiringPage'
 import NotFound from './components/pages/404/NotFound'
@@ -16,6 +19,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/courses' element={<CoursesPage />} />
+        <Route path='/courses/structure' element={<StructureCoursePage />} />
+        <Route path='/courses/architecture' element={<ArchitectureCoursePage />} />
+        <Route path='/courses/mepf' element={<MEPFCoursePage />} />
         <Route path='/hire' element={<HiringPage />} />
         <Route path='/events' element={<EventsPage />} />
         <Route path='/career' element={<CareerPage />} />
