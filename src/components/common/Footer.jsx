@@ -64,15 +64,15 @@ const Footer = () => {
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-              <p className="text-purple-200">123 Innovation Street, Tech City, TC 10001</p>
+              <p className="text-purple-200">1st Floor Mohota Complex, Above State Bank Of India, Katol Road, Chhaoni Rd, Nagpur, Maharashtra, 440013</p>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-yellow-400" />
-              <p className="text-purple-200">+1 (555) 123-4567</p>
+              <p className="text-purple-200">+91 8855885807 /+91 9730893320</p>
             </div>
             <div className="flex items-center gap-3">
               <Clock className="w-5 h-5 text-yellow-400" />
-              <p className="text-purple-200">Mon-Fri: 9AM - 6PM</p>
+              <p className="text-purple-200">Mon-Fri: 10AM - 6PM</p>
             </div>
           </div>
           
