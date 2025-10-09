@@ -5,7 +5,7 @@ const HeroVideo = () => {
     <div className="relative w-full overflow-hidden" style={{ height: "calc(100vh - 6rem)" }}>
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/bimVideo.mp4"
+        src="https://elite-india-s3.s3.ap-south-1.amazonaws.com/bimVideo.mp4"
         autoPlay
         loop
         muted
