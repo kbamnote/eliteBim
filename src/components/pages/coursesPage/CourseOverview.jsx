@@ -18,14 +18,14 @@ export default function CourseOverview() {
     {
       icon: Award,
       title: "BIM Certification & Recognition",
-      description: "Industry-recognized BIM certification upon completion for career advancement",
+      description: "Industry-recognized BIM certification and Auto desk professional certificate upon completion for career advancement",
       color: "from-green-500 to-emerald-600"
     }
   ];
 
   const skills = [
-    "Revit Architecture & MEP", "Navisworks Coordination", "AutoCAD Advanced",
-    "BIM Project Management", "Clash Detection", "4D & 5D BIM",
+    "Revit Architecture & MEPF", "Navisworks Coordination", "AutoCAD Advanced",
+    "BIM Project Management", "BIM Structure", "4D & 5D BIM",
     "Family Creation", "Dynamo Automation", "Point Cloud Integration",
     "VDC Workflows", "Digital Twins", "Sustainable Design"
   ];

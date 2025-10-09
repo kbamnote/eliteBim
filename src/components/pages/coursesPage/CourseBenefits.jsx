@@ -11,7 +11,7 @@ export default function CourseBenefits() {
     },
     {
       icon: TrendingUp,
-      title: "40% Salary Increase",
+      title: "30% Salary Increase",
       description: "Our graduates see significant salary growth within 6 months of completion",
       highlight: "Career advancement guaranteed"
     },

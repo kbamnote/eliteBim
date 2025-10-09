@@ -6,7 +6,7 @@ export default function CareerHero() {
   
   const stats = [
     { icon: TrendingUp, label: "Career Success Rate", value: "95%" },
-    { icon: Star, label: "Average Salary Increase", value: "40%" },
+    { icon: Star, label: "Average Salary Increase", value: "30%" },
     { icon: Briefcase, label: "Job Placements", value: "2400+" }
   ];
 
@@ -107,7 +107,7 @@ export default function CareerHero() {
                 <div className="text-yellow-200 text-sm">Job Placement Rate</div>
               </div>
               <div className="text-center animate-fade-in-up delay-700">
-                <div className="text-3xl font-bold text-yellow-300">40%</div>
+                <div className="text-3xl font-bold text-yellow-300">30%</div>
                 <div className="text-yellow-200 text-sm">Average Salary Increase</div>
               </div>
             </div>

@@ -38,7 +38,7 @@ export default function CareerCTA() {
             <div className="text-orange-200">Average Starting Salary</div>
           </div>
           <div>
-            <div className="text-3xl font-bold mb-2">40%</div>
+            <div className="text-3xl font-bold mb-2">30%</div>
             <div className="text-orange-200">Salary Increase</div>
           </div>
         </div>

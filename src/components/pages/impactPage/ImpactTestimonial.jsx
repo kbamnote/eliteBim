@@ -7,7 +7,7 @@ const ImpactTestimonial = () => {
       id: 1,
       name: "Sarah Johnson",
       role: "BIM Coordinator at WSP",
-      content: "Elite BIM transformed my career. The hands-on projects and mentorship helped me land my dream job at WSP with a 40% salary increase.",
+      content: "Elite BIM transformed my career. The hands-on projects and mentorship helped me land my dream job at WSP with a 30% salary increase.",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
     },
@@ -91,7 +91,7 @@ const ImpactTestimonial = () => {
             <div className="text-gray-600">Job Placement Rate</div>
           </div>
           <div className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all">
-            <div className="text-4xl font-bold text-indigo-600 mb-2">40%</div>
+            <div className="text-4xl font-bold text-indigo-600 mb-2">30%</div>
             <div className="text-gray-600">Average Salary Hike</div>
           </div>
           <div className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all">

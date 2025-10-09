@@ -92,7 +92,7 @@ const ImpactHero = () => {
             <div className="flex items-center justify-center w-12 h-12 bg-indigo-500/20 rounded-lg mb-4 mx-auto">
               <TrendingUp className="w-6 h-6 text-indigo-400" />
             </div>
-            <div className="text-3xl font-bold text-white mb-1">40%</div>
+            <div className="text-3xl font-bold text-white mb-1">30%</div>
             <div className="text-purple-200 text-sm">Avg. Salary Hike</div>
           </div>
         </div>

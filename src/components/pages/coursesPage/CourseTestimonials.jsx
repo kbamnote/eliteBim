@@ -39,7 +39,7 @@ export default function CourseTestimonials() {
     { number: "2400+", label: "Successful Graduates", icon: TrendingUp },
     { number: "95%", label: "Job Placement Rate", icon: Award },
     { number: "4.9/5", label: "Course Rating", icon: Star },
-    { number: "40%", label: "Average Salary Increase", icon: TrendingUp }
+    { number: "30%", label: "Average Salary Increase", icon: TrendingUp }
   ];
 
   return (
