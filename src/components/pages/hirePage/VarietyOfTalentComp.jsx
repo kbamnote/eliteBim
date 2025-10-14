@@ -1,5 +1,4 @@
 import React from "react";
-import gif from "../../../assets/talent-variety.gif";
 
 const VarietyOfTalentComp = () => {
   return (
@@ -54,7 +53,7 @@ const VarietyOfTalentComp = () => {
         {/* Right Side */}
         <div className="flex justify-center lg:justify-end">
           <img
-            src={gif}
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=center"
             alt="Variety of Talent"
             className="w-full rounded-2xl"
           />

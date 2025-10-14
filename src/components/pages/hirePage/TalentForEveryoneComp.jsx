@@ -1,9 +1,4 @@
 import React, { useState } from 'react'
-import cardimg1 from '../../../assets/cd1.svg'
-import cardimg2 from '../../../assets/cd2.svg'
-import cardimg3 from '../../../assets/cd3.svg'
-import cardimg4 from '../../../assets/cd4.svg'
-import cardimg5 from '../../../assets/cd5.svg'
 
 const TalentForEveryoneComp = () => {
   const [expandedCard, setExpandedCard] = useState(0)
@@ -11,7 +6,7 @@ const TalentForEveryoneComp = () => {
   const cards = [
     {
       id: 0,
-      image: cardimg1,
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center',
       title: 'MNCs',
       description: 'Elite BIM graduates hold international experience and expertise, which will help you gain a competitive edge. They are ready to enhance your project collaboration and communication on an international scale.',
       logos: [
@@ -22,25 +17,25 @@ const TalentForEveryoneComp = () => {
     },
     {
       id: 1,
-      image: cardimg2,
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&crop=center',
       title: 'BIM Consultancy',
       description: 'Elite BIM graduates are at the forefront of innovation, contributing to groundbreaking projects with their technical skills. Their expertise to streamline workflows and optimise project delivery is unmatched.'
     },
     {
       id: 2,
-      image: cardimg3,
+      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&crop=center',
       title: 'Architecture Studios',
       description: 'Our graduates excel at bringing creativity to life with BIM and elevating the architectural design process. They are capable of collaborating seamlessly with cross-functional teams to achieve design excellence.'
     },
     {
       id: 3,
-      image: cardimg4,
+      image: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=600&fit=crop&crop=center',
       title: 'Engineering Consultancy',
       description: 'Our graduates navigate complex engineering projects with proficiency in BIM methodologies to improve project coordination, reduce errors, and optimise resource utilisation.'
     },
     {
       id: 4,
-      image: cardimg5,
+      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
       title: 'Cross Industry',
       description: 'The use of BIM is not limited to the AEC industry in today\'s world. Elite BIM\'s training programmes open doors to diverse career paths by mastering skills applicable across industries.',
       logos: [

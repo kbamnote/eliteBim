@@ -2,6 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CoursesDropdown = ({ onClose }) => {
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleCourseClick = () => {
+    scrollToTop();
+    onClose();
+  };
   const courses = [
     {
       id: "elite-bim-professional",
@@ -69,7 +81,7 @@ const CoursesDropdown = ({ onClose }) => {
               </div>
               <Link
                 to={course.route}
-                onClick={onClose}
+                onClick={handleCourseClick}
                 className={`inline-flex items-center gap-2 bg-gradient-to-r ${course.gradient} text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-all transform hover:scale-105 shadow-lg`}
               >
                 View Course

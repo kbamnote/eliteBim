@@ -4,8 +4,22 @@ import teamone from '../../../assets/teamone.jpeg';
 import teamtwo from '../../../assets/teamtwo.jpeg';
 import teamthree from '../../../assets/teamthree.jpeg';
 import teamfour from '../../../assets/teamfour.jpeg';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 const OurTeam = () => {
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
   const teamMembers = [
     {
       id: 1,
@@ -147,11 +161,27 @@ const OurTeam = () => {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Join our comprehensive BIM training program and learn directly from professionals working at top engineering firms.
           </p>
-          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
+          <button 
+            onClick={openModal}
+            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl"
+          >
             Start Your BIM Journey
           </button>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 };

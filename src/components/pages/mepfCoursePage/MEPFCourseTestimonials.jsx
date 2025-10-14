@@ -1,7 +1,22 @@
 import React from 'react';
-import { Star, Quote, TrendingUp, Users, Award, Target } from 'lucide-react';
+import { Star, Quote, TrendingUp, Award, Building, Users,Target } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function MEPFCourseTestimonials() {
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
   const testimonials = [
     {
       name: "Rajesh Kumar",
@@ -175,16 +190,29 @@ export default function MEPFCourseTestimonials() {
               Join thousands of successful MEP engineers who chose Elite Associate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-red-700 transition-all transform hover:scale-105">
+              <button 
+                onClick={openModal}
+                className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-red-700 transition-all transform hover:scale-105">
                 Start Your Success Story
               </button>
-              <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 hover:text-white transition-all">
-                View More Reviews
-              </button>
+            
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

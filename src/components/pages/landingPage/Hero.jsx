@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Phone, Users, Award, BookOpen, TrendingUp } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function Hero() {
   const [currentStat, setCurrentStat] = useState(0);
+  
+  // Modal functionality
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
   
   const stats = [
     { icon: Users, label: "Currently Impacting", value: "2400+ learners" },
@@ -64,10 +80,13 @@ export default function Hero() {
                 Explore BIM Courses
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="/career" className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
+              <button 
+                onClick={openModal}
+                className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400"
+              >
                 Request a Call Back
                 <Phone className="w-5 h-5" />
-              </a>
+              </button>
             </div>
 
             {/* Company Logos Section */}
@@ -178,6 +197,18 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
       
     </div>
   );

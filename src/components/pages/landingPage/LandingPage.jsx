@@ -1,7 +1,7 @@
 import React from 'react'
 import BimFeatures from "./BimFeatures"
-import BimResources from "./BimResources"
-import BimTestimonials from "./BimTestimonials"
+// import BimResources from "./BimResources"
+// import BimTestimonials from "./BimTestimonials"
 import ContactPage from "./ContactPage"
 import CoursesSection from "./CourseSection"
 import Hero from "./Hero"
@@ -10,7 +10,7 @@ import ImpactSection from "./ImpactSection"
 import MentorsSection from "./MentorsSection"
 import NextChapter from "./NextChapter"
 import OurTeam from "./OurTeam"
-import Press from "./Press"
+// import Press from "./Press"
 import ProjectsSection from "./ProjectSection"
 import TestimonialSection from "./TestimonialSection"
 
@@ -19,19 +19,19 @@ const LandingPage = () => {
     <div>
       <HeroVideo/>
       <Hero />
-  
+   <OurTeam />
       <ImpactSection />
       <CoursesSection />
-      <OurTeam />
+     
       <MentorsSection />
       <ProjectsSection />
       <TestimonialSection />
       <BimFeatures />
       <ContactPage/>
-      <BimResources />
-      <BimTestimonials />
+      {/* <BimResources /> */}
+      {/* <BimTestimonials /> */}
       
-      <Press />
+      {/* <Press /> */}
       <NextChapter />
     </div>
   )

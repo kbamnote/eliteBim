@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Star, Clock, Users, Award, PlayCircle, CheckCircle } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function StructureCourseHero() {
   const [currentStat, setCurrentStat] = useState(0);
+  
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    closeModal,
+    openModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
   
   const stats = [
     { icon: Users, label: "Students Enrolled", value: "1800+" },
@@ -100,13 +116,13 @@ export default function StructureCourseHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-yellow-400 to-emerald-400 text-green-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-emerald-300 transition-all transform hover:scale-105 shadow-xl">
-                Enroll Now - $2,497
+              <button onClick={openModal} className="bg-gradient-to-r from-yellow-400 to-emerald-400 text-green-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-emerald-300 transition-all transform hover:scale-105 shadow-xl">
+                Enroll Now 
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20">
+              {/* <button className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20">
                 <PlayCircle className="w-6 h-6" />
                 Watch Demo
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -162,6 +178,19 @@ export default function StructureCourseHero() {
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

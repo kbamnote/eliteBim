@@ -1,5 +1,4 @@
 import React from 'react'
-import companiesImg from '../../../assets/companies.png'
 
 const CompaniesComp = () => {
   return (
@@ -26,7 +25,7 @@ const CompaniesComp = () => {
             {/* Image */}
             <div className="relative">
               <img 
-                src={companiesImg} 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=600&fit=crop&crop=center" 
                 alt="Global companies hiring our candidates" 
                 className="w-full h-auto"
               />

@@ -88,9 +88,7 @@ export default function TestimonialSection() {
           <p className="text-gray-700 text-lg mb-2">
             Our 950 graduates landed placements at top AECs with an average pay hike of <span className="font-bold text-purple-600">63%</span>!
           </p>
-          <a href="#" className="text-purple-600 font-semibold hover:underline inline-flex items-center gap-1">
-            Click to learn more →
-          </a>
+         
         </div>
 
         {/* Companies Section */}

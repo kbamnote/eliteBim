@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Star, Clock, Users, Award, PlayCircle, CheckCircle } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
+import BimImg from '../../../assets/BIM image.jpg'
 
 export default function CourseHero() {
   const [currentStat, setCurrentStat] = useState(0);
+  const { 
+    isOpen, 
+    formData, 
+    agreedToTerms, 
+    status, 
+    handleChange, 
+    handleSubmit, 
+    openModal, 
+    closeModal, 
+    handleOverlayClick, 
+    setAgreedToTerms 
+  } = useCallbackModal();
   
   const stats = [
     { icon: Users, label: "Students Enrolled", value: "2400+" },
@@ -98,14 +113,17 @@ export default function CourseHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+              <button 
+                onClick={openModal}
+                className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl"
+              >
                 Enroll in BIM Course
                 <CheckCircle className="w-5 h-5" />
               </button>
-              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
+              {/* <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
                 <PlayCircle className="w-5 h-5" />
                 Watch Course Preview
-              </button>
+              </button> */}
             </div>
 
             {/* Upcoming Batch Info */}
@@ -124,10 +142,14 @@ export default function CourseHero() {
 
           {/* Right Content - Course Preview */}
           <div className="relative animate-fade-in-right">
-            {/* Video/Preview Container */}
+            {/* Image/Preview Container */}
             <div className="relative bg-gradient-to-br from-purple-700 to-indigo-800 rounded-3xl p-8 shadow-2xl border-4 border-purple-400/30">
-              <div className="aspect-video bg-gray-900 rounded-2xl mb-6 flex items-center justify-center group cursor-pointer hover:bg-gray-800 transition-colors" role="img" aria-label="BIM course preview video">
-                <PlayCircle className="w-20 h-20 text-white group-hover:scale-110 transition-transform" />
+              <div className="aspect-video rounded-2xl mb-6 overflow-hidden">
+                <img 
+                  src={BimImg} 
+                  alt="BIM Course Preview" 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
               </div>
               
               <h3 className="text-white text-xl font-bold mb-4">BIM Course Preview</h3>
@@ -177,6 +199,19 @@ export default function CourseHero() {
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal 
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

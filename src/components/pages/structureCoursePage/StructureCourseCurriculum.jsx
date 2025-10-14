@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Clock, Users, BookOpen, Award, Building, Wrench } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function StructureCourseCurriculum() {
   const [expandedModule, setExpandedModule] = useState(0);
 
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    closeModal,
+    openModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
+
   const modules = [
+    {
+      title: "What is BIM",
+      duration: "2 weeks",
+      icon: BookOpen,
+      topics: [
+        "Introduction to Building Information Modeling (BIM)",
+        "BIM vs traditional CAD: Key differences and advantages",
+        "BIM dimensions: 3D, 4D, 5D, 6D, and 7D explained",
+        "Industry standards and protocols (ISO 19650, PAS 1192)",
+        "BIM software ecosystem and interoperability",
+        "Digital twin concepts and applications",
+        "BIM implementation strategies in organizations",
+        "Common Data Environment (CDE) principles",
+        "BIM roles and responsibilities in project teams",
+        "Future trends and emerging technologies in BIM"
+      ]
+    },
     {
       title: "BIM Fundamentals for Structures",
       duration: "3 weeks",
@@ -14,7 +47,12 @@ export default function StructureCourseCurriculum() {
         "Revit Structure interface and navigation",
         "Structural families and components",
         "Project setup and structural templates",
-        "Structural drawing standards and conventions"
+        "Structural drawing standards and conventions",
+        "BIM execution planning for structural projects",
+        "Level of Development (LOD) for structural elements",
+        "Structural modeling best practices and workflows",
+        "Quality assurance and model checking procedures",
+        "Collaboration protocols with design teams"
       ]
     },
     {
@@ -26,7 +64,14 @@ export default function StructureCourseCurriculum() {
         "Foundation and footing design",
         "Beam, column, and slab modeling",
         "Rebar modeling and detailing",
-        "Structural connections and joints"
+        "Structural connections and joints",
+        "Advanced concrete modeling techniques",
+        "Steel connection libraries and customization",
+        "Precast concrete element modeling",
+        "Post-tensioned concrete systems",
+        "Composite structural systems",
+        "Structural grid and reference plane management",
+        "Material properties and structural analysis preparation"
       ]
     },
     {
@@ -38,7 +83,14 @@ export default function StructureCourseCurriculum() {
         "Precast concrete elements",
         "Steel fabrication details",
         "Structural walls and bracing",
-        "Load-bearing element optimization"
+        "Load-bearing element optimization",
+        "Parametric structural design approaches",
+        "Custom structural family creation",
+        "Advanced rebar modeling and scheduling",
+        "Structural opening and penetration management",
+        "Seismic design considerations in BIM",
+        "Wind load modeling and analysis",
+        "Structural performance optimization techniques"
       ]
     },
     {
@@ -50,7 +102,14 @@ export default function StructureCourseCurriculum() {
         "Load application and distribution",
         "Structural performance evaluation",
         "Code compliance checking",
-        "Design optimization techniques"
+        "Design optimization techniques",
+        "Robot Structural Analysis integration",
+        "ETABS and SAP2000 interoperability",
+        "Load combination and analysis cases",
+        "Dynamic analysis and modal studies",
+        "Non-linear analysis considerations",
+        "Result interpretation and validation",
+        "Automated design code checking workflows"
       ]
     },
     {
@@ -62,7 +121,14 @@ export default function StructureCourseCurriculum() {
         "MEP integration with structure",
         "Clash detection and resolution",
         "Coordination review processes",
-        "BIM execution planning"
+        "BIM execution planning",
+        "Federated model management",
+        "Issue tracking and resolution workflows",
+        "Design review and approval processes",
+        "Version control and model synchronization",
+        "Cross-discipline communication protocols",
+        "Coordination meeting facilitation",
+        "Model-based quantity takeoffs coordination"
       ]
     },
     {
@@ -74,7 +140,14 @@ export default function StructureCourseCurriculum() {
         "Schedules and material takeoffs",
         "Shop drawing coordination",
         "As-built documentation",
-        "Quality control and checking"
+        "Quality control and checking",
+        "Automated drawing generation and annotation",
+        "Construction sequencing and phasing",
+        "Material quantity extraction and reporting",
+        "Specification writing and coordination",
+        "Construction detail development",
+        "Progress tracking and monitoring",
+        "Digital handover and facility management preparation"
       ]
     },
     {
@@ -86,7 +159,14 @@ export default function StructureCourseCurriculum() {
         "Parametric structural design",
         "Advanced modeling techniques",
         "Structural visualization methods",
-        "Performance-based design"
+        "Performance-based design",
+        "Dynamo for structural automation",
+        "Advanced scheduling and tagging",
+        "Structural rendering and presentation",
+        "Virtual and augmented reality applications",
+        "Machine learning applications in structural BIM",
+        "Generative design for structures",
+        "Advanced interoperability workflows"
       ]
     },
     {
@@ -98,15 +178,22 @@ export default function StructureCourseCurriculum() {
         "Multi-story building structure",
         "Professional presentation preparation",
         "Portfolio development and review",
-        "Industry mentor feedback and guidance"
+        "Industry mentor feedback and guidance",
+        "Real-world project simulation",
+        "Client presentation and communication",
+        "Project management and timeline coordination",
+        "Quality assurance and peer review",
+        "Industry standard deliverable preparation",
+        "Career preparation and networking",
+        "Certification exam preparation and practice"
       ]
     }
   ];
 
   const stats = [
-    { number: "180+", label: "Learning Hours" },
-    { number: "8", label: "Comprehensive Modules" },
-    { number: "50+", label: "Hands-on Projects" },
+    { number: "200+", label: "Learning Hours" },
+    { number: "9", label: "Comprehensive Modules" },
+    { number: "75+", label: "Hands-on Projects" },
     { number: "24/7", label: "Expert Support" }
   ];
 
@@ -233,13 +320,26 @@ export default function StructureCourseCurriculum() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
               <h3 className="text-lg font-bold text-white mb-3">Ready to Start?</h3>
               <p className="text-blue-200 text-sm mb-4">Join our next Structure cohort</p>
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+              <button onClick={openModal} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
                 Enroll Now
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

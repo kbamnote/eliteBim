@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Users, Clock, Award, Play, CheckCircle, Building, Layers, Palette } from 'lucide-react';
+import { Star, Users, Clock, Award, CheckCircle, Building, Layers, Palette } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function ArchitectureCourseHero() {
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
+
   const [stats, setStats] = useState({
     architects: 0,
     projects: 0,
@@ -108,13 +124,12 @@ export default function ArchitectureCourseHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-xl">
-                Enroll Now - $2,297
+              <button 
+                onClick={openModal}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-xl">
+                Enroll Now
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all border border-white/20">
-                <Play className="w-5 h-5" />
-                Watch Preview
-              </button>
+            
             </div>
 
             {/* Trust Indicators */}
@@ -176,6 +191,19 @@ export default function ArchitectureCourseHero() {
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

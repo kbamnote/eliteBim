@@ -4,10 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import cardImg1 from "../../../assets/c1.webp";
-import cardImg2 from "../../../assets/c2.webp";
-import cardImg3 from "../../../assets/c3.webp";
-
 const WhyEliteStandoutComp = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -92,7 +88,7 @@ const WhyEliteStandoutComp = () => {
                 <div className="group relative bg-white/80 rounded-2xl overflow-hidden flex flex-col h-[600px]">
                   <div className="overflow-hidden">
                     <img
-                      src={cardImg1}
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&crop=center"
                       alt="Global Exposure - Taught by experts"
                       className="w-full max-w-full object-cover"
                     />
@@ -119,7 +115,7 @@ const WhyEliteStandoutComp = () => {
                 <div className="group bg-white/80 rounded-2xl overflow-hidden flex flex-col h-[600px]">
                   <div className="overflow-hidden">
                     <img
-                      src={cardImg2}
+                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=center"
                       alt="Industry Ready - Real world projects"
                       className="w-full max-w-full object-cover"
                     />
@@ -147,7 +143,7 @@ const WhyEliteStandoutComp = () => {
                 <div className="group relative bg-white/80 rounded-2xl overflow-hidden flex flex-col h-[600px]">
                   <div className="overflow-hidden">
                     <img
-                      src={cardImg3}
+                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&crop=center"
                       alt="Skills of the future - Industry workflows"
                       className="w-full max-w-full object-cover"
                     />

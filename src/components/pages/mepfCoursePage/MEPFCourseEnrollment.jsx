@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Users, CheckCircle, Star, CreditCard, Shield, Award, Zap } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function MEPFCourseEnrollment() {
   const [timeLeft, setTimeLeft] = useState({
@@ -8,6 +10,20 @@ export default function MEPFCourseEnrollment() {
     minutes: 42,
     seconds: 30
   });
+
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -228,14 +244,18 @@ export default function MEPFCourseEnrollment() {
 
             {/* Quick Actions */}
             <div className="space-y-3">
-              <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-xl font-bold text-lg hover:from-green-600 hover:to-green-700 transition-all flex items-center justify-center gap-2">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-xl font-bold text-lg hover:from-green-600 hover:to-green-700 transition-all flex items-center justify-center gap-2"
+              >
                 <Zap className="w-5 h-5" />
                 Enroll Now - Save ₹30,000
               </button>
-              <button className="w-full border-2 border-white text-white py-3 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-all">
-                Download Brochure
-              </button>
-              <button className="w-full bg-white/10 text-white py-3 rounded-xl font-semibold hover:bg-white/20 transition-all">
+           
+              <button 
+                onClick={openModal}
+                className="w-full bg-white/10 text-white py-3 rounded-xl font-semibold hover:bg-white/20 transition-all"
+              >
                 Schedule a Call
               </button>
             </div>
@@ -258,6 +278,19 @@ export default function MEPFCourseEnrollment() {
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

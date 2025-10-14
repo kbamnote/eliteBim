@@ -40,6 +40,14 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <nav className={`fixed w-full top-20 sm:top-12 z-40 transition-all duration-300 ${
       scrolled 
@@ -50,7 +58,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Link to="/" className="flex items-center" aria-label="Elite BIM - Building Information Modeling Education">
+            <Link to="/" onClick={scrollToTop} className="flex items-center" aria-label="Elite BIM - Building Information Modeling Education">
               <img src={logo} alt="Elite BIM Logo - BIM Certification Courses" className="h-15 w-auto" />
             </Link>
           </div>
@@ -72,17 +80,28 @@ const Navbar = () => {
               {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             </div>
             
-            <Link
+            {/* <Link
               to="/resources"
               className={`hover:text-purple-600 flex items-center gap-1 transition-colors ${
                 location.pathname === "/resources" ? "text-purple-600" : ""
               }`}
             >
               BIM Resources 
-            </Link>
+            </Link> */}
             
+  <Link
+              to="/software"
+              onClick={scrollToTop}
+              className={`hover:text-purple-600 flex items-center gap-1 transition-colors ${
+                location.pathname === "/resources" ? "text-purple-600" : ""
+              }`}
+            >
+              Software 
+            </Link>
+
             <Link 
               to="/hire" 
+              onClick={scrollToTop}
               className={`hover:text-purple-600 transition-colors ${
                 location.pathname === "/hire" ? "text-purple-600" : ""
               }`}
@@ -92,6 +111,7 @@ const Navbar = () => {
             
             <Link 
               to="/events" 
+              onClick={scrollToTop}
               className={`hover:text-purple-600 transition-colors ${
                 location.pathname === "/events" ? "text-purple-600" : ""
               }`}
@@ -101,6 +121,7 @@ const Navbar = () => {
             
             <Link 
               to="/impact" 
+              onClick={scrollToTop}
               className={`hover:text-purple-600 transition-colors ${
                 location.pathname === "/impact" ? "text-purple-600" : ""
               }`}
@@ -110,6 +131,7 @@ const Navbar = () => {
             
             <Link 
               to="/career" 
+              onClick={scrollToTop}
               className={`hover:text-purple-600 transition-colors ${
                 location.pathname === "/career" ? "text-purple-600" : ""
               }`}
@@ -140,23 +162,27 @@ const Navbar = () => {
             </button>
             {showCourses && <CoursesDropdown onClose={() => setShowCourses(false)} />}
             
-            <Link to="/resources" className="block hover:text-purple-600 py-2">
+            {/* <Link to="/resources" className="block hover:text-purple-600 py-2">
               BIM Resources
+            </Link> */}
+
+            <Link to="/softwares" onClick={scrollToTop} className="block hover:text-purple-600 py-2">
+              Softwares
             </Link>
             
-            <Link to="/hire" className="block hover:text-purple-600 py-2">
+            <Link to="/hire" onClick={scrollToTop} className="block hover:text-purple-600 py-2">
               Hire BIM Professionals
             </Link>
             
-            <Link to="/events" className="block hover:text-purple-600 py-2">
+            <Link to="/events" onClick={scrollToTop} className="block hover:text-purple-600 py-2">
               BIM Events
             </Link>
             
-            <Link to="/impact" className="block hover:text-purple-600 py-2">
+            <Link to="/impact" onClick={scrollToTop} className="block hover:text-purple-600 py-2">
               Our Impact
             </Link>
             
-            <Link to="/career" className="block hover:text-purple-600 py-2">
+            <Link to="/career" onClick={scrollToTop} className="block hover:text-purple-600 py-2">
               Career Counselling
             </Link>
           </div>

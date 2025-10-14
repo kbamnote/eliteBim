@@ -2,9 +2,10 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './components/pages/landingPage/LandingPage'
 import ImpactPage from './components/pages/impactPage/ImpactPage'
-import ResourcesPage from './components/pages/resourcesPage/ResourcesPage'
+// import ResourcesPage from './components/pages/resourcesPage/ResourcesPage'
 import CareerPage from './components/pages/careerPage/CareerPage'
 import CoursesPage from './components/pages/coursesPage/CoursesPage'
+import SoftwarePage from './components/pages/softwarePage/SoftwarePage'
 import StructureCoursePage from './components/pages/structureCoursePage/StructureCoursePage'
 import ArchitectureCoursePage from './components/pages/architectureCoursePage/ArchitectureCoursePage'
 import MEPFCoursePage from './components/pages/mepfCoursePage/MEPFCoursePage'
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/courses' element={<CoursesPage />} />
+        <Route path='/software' element={<SoftwarePage />} />
         <Route path='/courses/structure' element={<StructureCoursePage />} />
         <Route path='/courses/architecture' element={<ArchitectureCoursePage />} />
         <Route path='/courses/mepf' element={<MEPFCoursePage />} />
@@ -26,7 +28,7 @@ const App = () => {
         <Route path='/events' element={<EventsPage />} />
         <Route path='/career' element={<CareerPage />} />
         <Route path='/impact' element={<ImpactPage />} />
-        <Route path='/resources' element={<ResourcesPage />} />
+        {/* <Route path='/resources' element={<ResourcesPage />} /> */}
         <Route path='/*' element={<NotFound />} />
       </Routes>
     </MainLayout>

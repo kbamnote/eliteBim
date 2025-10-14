@@ -59,7 +59,7 @@ export default function ImpactSection() {
             {/* Description */}
             <p className="text-gray-600 text-lg max-w-2xl">
               A world of opportunities awaits architecture, engineering, 
-              and construction (AEC) professionals. Novatr is your key to 
+              and construction (AEC) professionals. Elite Bim is your key to 
               unlocking it.
             </p>
           </div>

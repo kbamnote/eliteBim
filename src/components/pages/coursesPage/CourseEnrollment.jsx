@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import { CheckCircle, Clock, Users, Award, CreditCard, Calendar, Phone } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function CourseEnrollment() {
   const [selectedPlan, setSelectedPlan] = useState('full');
+
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
 
   const plans = [
     {
@@ -163,12 +179,18 @@ export default function CourseEnrollment() {
 
             {/* Enrollment Actions */}
             <div className="space-y-4">
-              <button className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl"
+              >
                 <CreditCard className="w-6 h-6" />
                 Enroll Now - {plans.find(p => p.id === selectedPlan)?.price}
               </button>
               
-              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2"
+              >
                 <Phone className="w-5 h-5" />
                 Schedule a Call with Advisor
               </button>
@@ -196,12 +218,25 @@ export default function CourseEnrollment() {
             {/* Contact Info */}
             <div className="mt-8 text-center">
               <p className="text-gray-600 text-sm mb-2">Have questions? We're here to help!</p>
-              <p className="text-purple-600 font-semibold">📞 +1 (555) 123-4567</p>
-              <p className="text-purple-600 font-semibold">✉️ hello@elitebim.com</p>
+              <p className="text-purple-600 font-semibold">📞 +91 8855885807</p>
+              <p className="text-purple-600 font-semibold">✉️ info@elitebim.in</p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

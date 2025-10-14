@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Users, Shield, Star, CreditCard, Calendar, ArrowRight, Gift } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function StructureCourseEnrollment() {
   const [selectedPlan, setSelectedPlan] = useState('full');
@@ -9,6 +11,20 @@ export default function StructureCourseEnrollment() {
     minutes: 30,
     seconds: 45
   });
+
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -198,14 +214,15 @@ export default function StructureCourseEnrollment() {
 
             {/* Enrollment Actions */}
             <div className="space-y-4">
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all flex items-center justify-center gap-3">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all flex items-center justify-center gap-3"
+              >
                 <CreditCard className="w-6 h-6" />
                 Enroll Now - Secure Your Spot
                 <ArrowRight className="w-6 h-6" />
               </button>
-              <button className="w-full bg-white/10 backdrop-blur-sm text-white py-3 rounded-xl font-semibold border border-white/20 hover:bg-white/20 transition-all">
-                Download Detailed Curriculum
-              </button>
+           
             </div>
           </div>
 
@@ -268,13 +285,29 @@ export default function StructureCourseEnrollment() {
               <p className="text-blue-200 text-sm mb-4">
                 Speak with our enrollment counselor
               </p>
-              <button className="w-full bg-white/20 text-white py-3 rounded-lg font-semibold hover:bg-white/30 transition-all">
+              <button 
+                onClick={openModal}
+                className="w-full bg-white/20 text-white py-3 rounded-lg font-semibold hover:bg-white/30 transition-all"
+              >
                 Schedule Free Consultation
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

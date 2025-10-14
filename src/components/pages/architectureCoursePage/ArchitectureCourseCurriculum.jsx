@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Clock, Users, BookOpen, Award, Building, Palette, Eye, Layers } from 'lucide-react';
+import { ChevronDown,Eye, ChevronUp, Clock, Users, BookOpen, Award, Building, Palette, Layers, Wrench } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function ArchitectureCourseCurriculum() {
   const [expandedModule, setExpandedModule] = useState(0);
 
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
+
   const modules = [
+    {
+      title: "What is BIM",
+      duration: "2 weeks",
+      icon: BookOpen,
+      topics: [
+        "Introduction to Building Information Modeling (BIM)",
+        "BIM vs traditional CAD: Key differences and advantages",
+        "BIM dimensions: 3D, 4D, 5D, 6D, and 7D explained",
+        "Industry standards and protocols (ISO 19650, PAS 1192)",
+        "BIM software ecosystem and interoperability",
+        "Digital twin concepts and applications",
+        "BIM implementation strategies in organizations",
+        "Common Data Environment (CDE) principles",
+        "BIM roles and responsibilities in project teams",
+        "Future trends and emerging technologies in BIM"
+      ]
+    },
     {
       title: "BIM Fundamentals for Architecture",
       duration: "3 weeks",
@@ -14,7 +47,12 @@ export default function ArchitectureCourseCurriculum() {
         "Revit Architecture interface and navigation",
         "Basic modeling techniques and family creation",
         "Project setup and template customization",
-        "Architectural drawing standards and conventions"
+        "Architectural drawing standards and conventions",
+        "BIM execution planning for architectural projects",
+        "Level of Development (LOD) for architectural elements",
+        "Architectural modeling best practices and workflows",
+        "Quality assurance and model checking procedures",
+        "Collaboration protocols with design teams"
       ]
     },
     {
@@ -26,7 +64,14 @@ export default function ArchitectureCourseCurriculum() {
         "Complex roof and floor systems",
         "Stairs, railings, and circulation design",
         "Room and space planning techniques",
-        "Architectural detailing and annotations"
+        "Architectural detailing and annotations",
+        "Parametric design and adaptive components",
+        "Mass modeling and conceptual design",
+        "Site modeling and topography integration",
+        "Building envelope optimization",
+        "Accessibility and universal design principles",
+        "Sustainable design integration strategies",
+        "Advanced family creation and customization"
       ]
     },
     {
@@ -38,7 +83,14 @@ export default function ArchitectureCourseCurriculum() {
         "Lighting design and setup",
         "Camera positioning and composition",
         "Photorealistic rendering techniques",
-        "Animation and walkthrough creation"
+        "Animation and walkthrough creation",
+        "Advanced material editing and texturing",
+        "Environmental lighting and HDRI integration",
+        "Post-processing and image enhancement",
+        "Virtual reality (VR) visualization workflows",
+        "Real-time rendering and interactive presentations",
+        "Drone photography integration",
+        "Client presentation and communication techniques"
       ]
     },
     {
@@ -50,7 +102,14 @@ export default function ArchitectureCourseCurriculum() {
         "Plan, section, and elevation views",
         "Detail drawings and callouts",
         "Schedules and quantity takeoffs",
-        "Drawing coordination and management"
+        "Drawing coordination and management",
+        "Automated drawing generation and annotation",
+        "Construction sequencing and phasing documentation",
+        "Specification writing and coordination",
+        "Code compliance documentation",
+        "Construction administration workflows",
+        "As-built documentation processes",
+        "Digital handover and facility management preparation"
       ]
     },
     {
@@ -62,7 +121,14 @@ export default function ArchitectureCourseCurriculum() {
         "Design options and alternatives",
         "Parametric design principles",
         "Form-finding and optimization",
-        "Sustainable design integration"
+        "Sustainable design integration",
+        "Performance-based design workflows",
+        "Energy analysis and optimization",
+        "Daylighting and solar studies",
+        "Wind and environmental analysis",
+        "Design iteration and optimization techniques",
+        "Client feedback integration processes",
+        "Design validation and verification methods"
       ]
     },
     {
@@ -74,7 +140,14 @@ export default function ArchitectureCourseCurriculum() {
         "Clash detection and resolution",
         "Worksharing and collaboration tools",
         "Cloud-based project management",
-        "Version control and file management"
+        "Version control and file management",
+        "Federated model management",
+        "Issue tracking and resolution workflows",
+        "Design review and approval processes",
+        "Cross-discipline communication protocols",
+        "Coordination meeting facilitation",
+        "Model-based quantity takeoffs coordination",
+        "BIM execution planning and implementation"
       ]
     },
     {
@@ -86,7 +159,14 @@ export default function ArchitectureCourseCurriculum() {
         "Adaptive components and patterns",
         "Computational design workflows",
         "Integration with analysis tools",
-        "Custom family development"
+        "Custom family development",
+        "Dynamo for architectural automation",
+        "Advanced scheduling and tagging",
+        "Architectural rendering and presentation",
+        "Virtual and augmented reality applications",
+        "Machine learning applications in architectural BIM",
+        "Generative design for architecture",
+        "Advanced interoperability workflows"
       ]
     },
     {
@@ -98,15 +178,22 @@ export default function ArchitectureCourseCurriculum() {
         "Multi-story building design and coordination",
         "Professional presentation preparation",
         "Portfolio development and review",
-        "Industry mentor feedback and guidance"
+        "Industry mentor feedback and guidance",
+        "Real-world project simulation",
+        "Client presentation and communication",
+        "Project management and timeline coordination",
+        "Quality assurance and peer review",
+        "Industry standard deliverable preparation",
+        "Career preparation and networking",
+        "Certification exam preparation and practice"
       ]
     }
   ];
 
   const stats = [
-    { number: "180+", label: "Learning Hours" },
-    { number: "8", label: "Comprehensive Modules" },
-    { number: "50+", label: "Hands-on Projects" },
+    { number: "200+", label: "Learning Hours" },
+    { number: "9", label: "Comprehensive Modules" },
+    { number: "75+", label: "Hands-on Projects" },
     { number: "24/7", label: "Expert Support" }
   ];
 
@@ -233,13 +320,28 @@ export default function ArchitectureCourseCurriculum() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
               <h3 className="text-lg font-bold text-white mb-3">Ready to Start?</h3>
               <p className="text-blue-200 text-sm mb-4">Join our next architecture cohort</p>
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
                 Enroll Now
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

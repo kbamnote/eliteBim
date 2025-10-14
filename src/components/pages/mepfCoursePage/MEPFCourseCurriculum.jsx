@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Clock, Users, BookOpen, Award, Zap, Wind, Droplets, Settings } from 'lucide-react';
+import { ChevronDown, ChevronUp,Settings, Clock, Users, BookOpen, Award, Zap, Wrench, Droplets, Wind } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function MEPFCourseCurriculum() {
   const [expandedModule, setExpandedModule] = useState(0);
 
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
+
   const modules = [
+    {
+      title: "What is BIM",
+      duration: "2 weeks",
+      icon: BookOpen,
+      topics: [
+        "Introduction to Building Information Modeling (BIM)",
+        "BIM dimensions: 3D, 4D, 5D, 6D, and 7D explained",
+        "BIM standards and protocols (ISO 19650, PAS 1192)",
+        "Industry benefits and ROI of BIM implementation",
+        "BIM software ecosystem and interoperability",
+        "Digital twin concepts and smart building integration",
+        "BIM project lifecycle and information management",
+        "Collaborative workflows and cloud-based platforms",
+        "Legal and contractual aspects of BIM projects",
+        "Future trends in construction technology and BIM"
+      ]
+    },
     {
       title: "BIM Fundamentals for MEP",
       duration: "3 weeks",
@@ -14,7 +47,12 @@ export default function MEPFCourseCurriculum() {
         "Revit MEP interface and navigation",
         "MEP system families and components",
         "Project setup and MEP templates",
-        "MEP drawing standards and conventions"
+        "MEP drawing standards and conventions",
+        "MEP modeling best practices and workflows",
+        "System browser and project organization",
+        "MEP-specific annotation and documentation",
+        "Quality control and model validation",
+        "MEP BIM execution planning fundamentals"
       ]
     },
     {
@@ -26,7 +64,14 @@ export default function MEPFCourseCurriculum() {
         "Lighting design and calculations",
         "Power and receptacle layouts",
         "Fire alarm and security systems",
-        "Electrical load analysis and sizing"
+        "Electrical load analysis and sizing",
+        "Motor control and variable frequency drives",
+        "Emergency power and backup systems",
+        "Electrical code compliance and safety",
+        "Cable tray and conduit routing systems",
+        "Electrical equipment specifications",
+        "Power quality analysis and harmonics",
+        "Smart building electrical integration"
       ]
     },
     {
@@ -38,7 +83,14 @@ export default function MEPFCourseCurriculum() {
         "Ductwork design and sizing",
         "Equipment placement and connections",
         "Energy analysis and optimization",
-        "Hydronic and refrigeration systems"
+        "Hydronic and refrigeration systems",
+        "Air distribution and ventilation design",
+        "HVAC controls and automation systems",
+        "Indoor air quality and filtration",
+        "Heat pump and geothermal systems",
+        "Variable air volume (VAV) systems",
+        "Energy recovery and heat exchangers",
+        "HVAC commissioning and testing procedures"
       ]
     },
     {
@@ -50,7 +102,14 @@ export default function MEPFCourseCurriculum() {
         "Drainage and waste systems",
         "Fire protection system design",
         "Plumbing fixture layouts",
-        "Code compliance and calculations"
+        "Code compliance and calculations",
+        "Domestic hot water systems and sizing",
+        "Greywater and rainwater harvesting",
+        "Medical gas and laboratory systems",
+        "Backflow prevention and water quality",
+        "Plumbing system commissioning",
+        "Sustainable plumbing design practices",
+        "Fire suppression system integration"
       ]
     },
     {
@@ -62,7 +121,14 @@ export default function MEPFCourseCurriculum() {
         "Clash detection and resolution",
         "MEP routing and space planning",
         "Coordination review processes",
-        "BIM execution planning for MEP"
+        "BIM execution planning for MEP",
+        "Federated model management",
+        "MEP coordination workflows",
+        "Space allocation and clearance requirements",
+        "Coordination meeting facilitation",
+        "Issue tracking and resolution",
+        "MEP constructability reviews",
+        "Installation sequencing and phasing"
       ]
     },
     {
@@ -74,7 +140,14 @@ export default function MEPFCourseCurriculum() {
         "Schedules and specifications",
         "Shop drawing coordination",
         "As-built documentation",
-        "Quality control and checking"
+        "Quality control and checking",
+        "MEP detail development and standards",
+        "Construction administration workflows",
+        "Submittal review and approval processes",
+        "Field verification and documentation",
+        "MEP drawing coordination and updates",
+        "Digital handover and O&M manuals",
+        "Construction phase BIM management"
       ]
     },
     {
@@ -86,7 +159,14 @@ export default function MEPFCourseCurriculum() {
         "Parametric system design",
         "Energy modeling integration",
         "Sustainable MEP systems",
-        "Advanced calculation methods"
+        "Advanced calculation methods",
+        "MEP system optimization algorithms",
+        "Building performance simulation",
+        "IoT integration and smart systems",
+        "Renewable energy system design",
+        "Advanced MEP automation workflows",
+        "Machine learning applications in MEP",
+        "Future-ready MEP technologies"
       ]
     },
     {
@@ -98,15 +178,22 @@ export default function MEPFCourseCurriculum() {
         "Multi-system integration and coordination",
         "Professional presentation preparation",
         "Portfolio development and review",
-        "Industry mentor feedback and guidance"
+        "Industry mentor feedback and guidance",
+        "Real-world project simulation",
+        "Client presentation and communication",
+        "Project management and timeline coordination",
+        "Quality assurance and peer review",
+        "Industry standard deliverable preparation",
+        "Career preparation and networking",
+        "Certification exam preparation and practice"
       ]
     }
   ];
 
   const stats = [
     { number: "200+", label: "Learning Hours" },
-    { number: "8", label: "Comprehensive Modules" },
-    { number: "60+", label: "Hands-on Projects" },
+    { number: "9", label: "Comprehensive Modules" },
+    { number: "75+", label: "Hands-on Projects" },
     { number: "24/7", label: "Expert Support" }
   ];
 
@@ -233,13 +320,28 @@ export default function MEPFCourseCurriculum() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
               <h3 className="text-lg font-bold text-white mb-3">Ready to Start?</h3>
               <p className="text-orange-200 text-sm mb-4">Join our next MEPF cohort</p>
-              <button className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-700 transition-all">
+              <button 
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-700 transition-all">
                 Enroll Now
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

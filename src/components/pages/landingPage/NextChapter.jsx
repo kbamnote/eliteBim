@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NextChapter = () => {
   return (
@@ -12,7 +13,7 @@ const NextChapter = () => {
               Ready to skyrocket your career?
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Your next chapter in AEC begins with Novatr!
+              Your next chapter in AEC begins with Elite Bim!
             </h1>
             <p className="text-gray-300 text-base md:text-lg">
               As you would have gathered, we are here to help you take the
@@ -22,9 +23,11 @@ const NextChapter = () => {
 
           {/* Right Content - Button */}
           <div className="flex lg:flex-shrink-0">
+            <Link to="/courses">
             <button className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 whitespace-nowrap">
               Explore Courses
             </button>
+            </Link>
           </div>
         </div>
       </div>
