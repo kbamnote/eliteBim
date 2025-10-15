@@ -32,7 +32,7 @@ const CompanyStats = () => {
     },
     {
       id: 2,
-      value: "7500+",
+      value: "500+",
       label: "Projects\nDelivered",
       gradient: "from-orange-400 to-pink-500",
       textColor: "text-orange-500",
@@ -65,7 +65,7 @@ const CompanyStats = () => {
         {/* Company Logos Marquee */}
         <div className="mb-20 relative">
           <div className="flex overflow-hidden">
-            <div className="flex animate-marquee">
+            {/* <div className="flex animate-marquee">
               {[...companies, ...companies].map((company, index) => (
                 <div
                   key={`${company.name}-${index}`}
@@ -78,7 +78,7 @@ const CompanyStats = () => {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -1,7 +1,23 @@
 import React from 'react';
 import { Globe, Gamepad2 } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function ProjectsSection() {
+  // Modal functionality
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    openModal,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms
+  } = useCallbackModal();
+
   return (
     <div className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -101,14 +117,30 @@ export default function ProjectsSection() {
         <div className="mt-8 bg-purple-900 rounded-2xl p-6 shadow-xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
             <p className="text-white text-lg">
-              Learn more about the gamified experience in Novatr's live projects.
+              Learn more about the gamified experience in Elite BIM's live projects.
             </p>
-            <button className="bg-white text-purple-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button 
+              onClick={openModal}
+              className="bg-white text-purple-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
               Click to learn more
             </button>
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Phone, Users, Award, BookOpen, TrendingUp } from 'lucide-react';
 import { useCallbackModal } from '../../../hooks/useCallbackModal';
 import CallbackModal from '../../common/CallbackModal';
+import bimEngineer1 from '../../../assets/bimEngineerOne.jpg';
+import bimEngineer2 from '../../../assets/bimEngineerTwo.jpg';
+import bimEngineer3 from '../../../assets/bimEngineerThree.jpg';
+import bimEngineer4 from '../../../assets/bimEngineerFour.jpg';
+import bimEngineer5 from '../../../assets/bimEngineerFive.jpg';
+import bimEngineer6 from '../../../assets/bimEngineerSix.jpg';
 
 export default function Hero() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -108,15 +114,15 @@ export default function Hero() {
               {/* Top Row */}
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" 
-                  alt="Professional BIM architect working on design"
+                  src={bimEngineer1} 
+                  alt="Indian BIM engineer at construction site with safety helmet"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" 
-                  alt="BIM engineer using Revit software"
+                  src={bimEngineer2} 
+                  alt="Professional Indian BIM engineer using construction technology"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -124,15 +130,15 @@ export default function Hero() {
               {/* Middle Row */}
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop" 
-                  alt="Construction professional using BIM tools"
+                  src={bimEngineer3} 
+                  alt="Indian construction professional working with BIM tools"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-indigo-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" 
-                  alt="Female engineer working on BIM project"
+                  src={bimEngineer4} 
+                  alt="Indian BIM engineer managing construction project"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -140,15 +146,15 @@ export default function Hero() {
               {/* Bottom Row */}
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-pink-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" 
-                  alt="Male architect using BIM software"
+                  src={bimEngineer5} 
+                  alt="Indian architect using BIM software at construction site"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden border-4 border-purple-400/30 shadow-2xl transform hover:scale-105 transition-transform">
                 <img 
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" 
-                  alt="Professional working on digital construction model"
+                  src={bimEngineer6} 
+                  alt="Professional Indian BIM engineer working on digital construction model"
                   className="w-full h-full object-cover"
                 />
               </div>

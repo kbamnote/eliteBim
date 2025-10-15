@@ -8,21 +8,21 @@ const ImpactPress = () => {
       quote: "Oneistox announces $1.2 million in seed funding; Y-Combinator, Powerhouse Ventures, Soma Capital leads",
       source: "Financial Express",
       logo: "https://logo.clearbit.com/financialexpress.com",
-      link: "#"
+      link: "https://www.financialexpress.com/jobs-career/education-oneistox-announces-1-2-million-in-seed-funding-y-combinator-powerhouse-ventures-soma-capital-leads-3043724/?utm_source=chatgpt.com"
     },
     {
       id: 2,
       quote: "Oneistox Secures Funding From YC, Powerhouse To Upskill AEC Professionals",
       source: "Inc42",
       logo: "https://logo.clearbit.com/inc42.com",
-      link: "#"
+      link: "https://inc42.com/buzz/upskilling-edtech-startup-oneistox-secures-funding-to-make-professionals-future-ready/?utm_source=chatgpt.com"
     },
     {
       id: 3,
       quote: "EDTECH START-UP ONEISTOX RAISES $1.2 MILLION SEED FUNDING",
       source: "Outlook Startup",
       logo: "https://logo.clearbit.com/outlookindia.com",
-      link: "#"
+      link: "https://entrackr.com/2023/04/edtech-startup-oneistox-raises-1-2-mn-seed-money/?utm_source=chatgpt.com"
     }
   ];
 
@@ -43,11 +43,11 @@ const ImpactPress = () => {
             </p>
           </div>
           
-          <div className="lg:flex-shrink-0">
+          {/* <div className="lg:flex-shrink-0">
             <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg hover:shadow-xl">
               Explore courses
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Press Coverage Cards */}
@@ -69,7 +69,7 @@ const ImpactPress = () => {
               </blockquote>
 
               {/* Footer with Logo and Arrow */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              {/* <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-3">
                   {article.logo ? (
                     <img
@@ -90,7 +90,7 @@ const ImpactPress = () => {
                 <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-purple-600 transition-colors duration-200">
                   <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-white transition-colors duration-200" />
                 </div>
-              </div>
+              </div> */}
             </a>
           ))}
         </div>

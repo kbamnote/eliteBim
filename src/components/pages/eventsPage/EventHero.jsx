@@ -1,14 +1,30 @@
 import React from 'react';
 import { Clock, ArrowRight, Calendar, User } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 const EventHero = () => {
+  // Modal functionality
+  const { 
+    isOpen, 
+    formData, 
+    agreedToTerms, 
+    status, 
+    handleChange, 
+    handleSubmit, 
+    closeModal, 
+    handleOverlayClick, 
+    setAgreedToTerms, 
+    openModal 
+  } = useCallbackModal();
+  
   const events = [
     {
       id: 1,
       date: '09 Nov',
       day: 'MON',
       title: 'Designing with Algorithms: How Architects Can Become Programmers',
-      author: 'Rachael Tatlow',
+      author: 'Mohammad Nayeem Ahmad',
       role: 'Architect & Software Developer for Specialist Modelling',
       image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=500&q=80',
       gradient: 'from-blue-600 to-purple-600'
@@ -18,7 +34,7 @@ const EventHero = () => {
       date: '07 Oct',
       day: 'SAT',
       title: 'The 3 W\'s of BIM Entry Civil Engineer Should Know',
-      author: 'Rachel Agaliotis',
+      author: 'Tanveer Ahmad',
       role: 'Senior BIM Manager',
       image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80',
       gradient: 'from-teal-500 to-teal-600'
@@ -38,7 +54,7 @@ const EventHero = () => {
       date: '17 Jul',
       day: 'MON',
       title: 'Ep.04 Understand The Career Roadmap Of A Successful Computational/ Sustainable Architect',
-      author: 'Sarah Castle',
+      author: 'Syed Shoeb Syed Ayyub',
       role: 'Computational Design Specialist',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',
       gradient: 'from-blue-500 to-cyan-500'
@@ -48,7 +64,7 @@ const EventHero = () => {
       date: '03 Jul',
       day: 'MON',
       title: 'Ep.03 How BIM And Computational Design Can Help Your Architectural Career',
-      author: 'Matt Robinson',
+      author: 'Mohammad Subhan',
       role: 'Senior Digital Designer',
       image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80',
       gradient: 'from-pink-500 to-purple-600'
@@ -58,7 +74,7 @@ const EventHero = () => {
       date: '26 Jun',
       day: 'MON',
       title: 'Ep.02 Know What Architects Can Do After B.ARCH - Work, Postgrad, And More!',
-      author: 'Raluca Grecu',
+      author: 'Tanveer Ahmad',
       role: 'Junior Architect/Project and Sustainability Engineer',
       image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&q=80',
       gradient: 'from-purple-400 to-pink-500'
@@ -68,7 +84,7 @@ const EventHero = () => {
       date: '12 Jun',
       day: 'MON',
       title: 'Ep.01 The Future of Architectural Careers in the Changing AEC Industry',
-      author: 'Tanya Casella',
+      author: 'Mohammad Nayeem Ahmad',
       role: '',
       image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80',
       gradient: 'from-blue-400 to-purple-500'
@@ -76,7 +92,7 @@ const EventHero = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 py-24 px-4 sm:px-6">
+    <div id="past-events" className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -139,22 +155,41 @@ const EventHero = () => {
                 </div>
 
                 {/* Watch Recording Button */}
-                <button className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 shadow-md">
+                {/* <button 
+                  onClick={openModal}
+                  className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 shadow-md"
+                >
                   Watch Recording
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
         </div>
         
         {/* Load More Button */}
-        <div className="text-center mt-12 animate-fade-in-up delay-500">
-          <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-colors shadow-lg">
+        {/* <div className="text-center mt-12 animate-fade-in-up delay-500">
+          <button 
+            onClick={openModal}
+            className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-colors shadow-lg"
+          >
             Load More Events
           </button>
-        </div>
+        </div> */}
       </div>
+      
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 };

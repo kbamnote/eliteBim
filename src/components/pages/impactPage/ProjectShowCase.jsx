@@ -40,7 +40,7 @@ const ProjectsShowCase = () => {
               <FileText className="w-6 h-6 text-purple-600" />
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-1">7500+ projects completed</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-1">500+ projects completed</h3>
               <p className="text-gray-600 text-sm">
                 Webflow awards, awards and so many real projects showcased globally
               </p>

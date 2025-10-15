@@ -1,7 +1,23 @@
 import React from 'react';
-import { MessageCircle, Users, Calendar } from 'lucide-react';
+import { Calendar, Users, Clock, ArrowRight, MessageCircle } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 const WebinarCta = () => {
+  // Modal functionality
+  const { 
+    isOpen, 
+    formData, 
+    agreedToTerms, 
+    status, 
+    handleChange, 
+    handleSubmit, 
+    closeModal, 
+    handleOverlayClick, 
+    setAgreedToTerms, 
+    openModal 
+  } = useCallbackModal();
+  
   return (
     <div className="w-full bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 py-16 px-4 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -28,11 +44,17 @@ const WebinarCta = () => {
                 Your insights help us create content that matters most to BIM professionals like you.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
+                <button 
+                  onClick={openModal}
+                  className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+                >
                   <Calendar className="w-5 h-5" />
                   Suggest a Topic
                 </button>
-                <button className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-white/20 transition-colors font-medium">
+                <button 
+                  onClick={openModal}
+                  className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg border border-white/20 hover:bg-white/20 transition-colors font-medium"
+                >
                   View Upcoming Webinars
                 </button>
               </div>
@@ -72,6 +94,19 @@ const WebinarCta = () => {
           </div>
         </div>
       </div>
+      
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 };

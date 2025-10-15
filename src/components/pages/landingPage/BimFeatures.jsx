@@ -14,7 +14,7 @@ export default function BimFeatures() {
     {
       icon: Video,
       title: "Interactive Live Sessions with Experts",
-      description: "All lessons are delivered live, so you can interact with mentors as well as your peers from around the world. At Novatr, online learning never feels dull!",
+      description: "All lessons are delivered live, so you can interact with mentors as well as your peers from around the world. At Elite Bim, online learning never feels dull!",
       image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80"
     }
   ];

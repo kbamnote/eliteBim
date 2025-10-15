@@ -15,7 +15,7 @@ export default function TestimonialSection() {
       name: "Ravi Kumar",
       role: "Got Ex-Comp Offer",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
-      text: "After completing the BIM course, I was very grateful for the Novatr team's guidance, interview training, and assistance in finding the right employment opportunities. They have been a huge part of my career switch.",
+      text: "After completing the BIM course, I was very grateful for the Elite Bim team's guidance, interview training, and assistance in finding the right employment opportunities. They have been a huge part of my career switch.",
       gradient: "from-pink-400 to-purple-400",
       badgeColor: "bg-pink-500"
     }

@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Briefcase, TrendingUp, Target, Star, ArrowRight, Calendar, Users, Award, GraduationCap } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function CareerHero() {
   const [currentStat, setCurrentStat] = useState(0);
+  
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms,
+    openModal
+  } = useCallbackModal();
   
   const stats = [
     { icon: TrendingUp, label: "Career Success Rate", value: "95%" },
@@ -66,14 +82,14 @@ export default function CareerHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+              <button onClick={openModal} className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
                 <Briefcase className="w-5 h-5" />
-                Explore Careers
-              </button>
-              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
-                <Calendar className="w-5 h-5" />
                 Get Career Guidance
               </button>
+              {/* <button onClick={openModal} className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
+                <Calendar className="w-5 h-5" />
+                Get Career Guidance
+              </button> */}
             </div>
 
             {/* Career Benefits */}
@@ -179,6 +195,19 @@ export default function CareerHero() {
           </div>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

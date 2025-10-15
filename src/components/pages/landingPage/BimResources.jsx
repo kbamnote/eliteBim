@@ -26,14 +26,14 @@ export default function BimResources() {
   const editorPicks = [
     {
       category: "Company News",
-      title: "AEC is Broken. Novatr is Here to End Exploitation!",
+      title: "AEC is Broken. Elite Bim is Here to End Exploitation!",
       author: "Shanaz Khan",
       date: "01 May 23",
       readTime: "6 mins"
     },
     {
       category: "Architecture & Construction",
-      title: "The Architect's Dilemma: Proficiency vs. Expertise - Novatr is Your Answer",
+      title: "The Architect's Dilemma: Proficiency vs. Expertise - Elite Bim is Your Answer",
       author: "Rohan Bhattacharyya",
       date: "02 Feb 24",
       readTime: "9 mins"

@@ -7,7 +7,7 @@ const TestimonialsComp = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Novatr graduates are more professional, focused and streamlined compared to other candidates. The hiring process was smooth and the results are great at our office.",
+      quote: "Elite Bim graduates are more professional, focused and streamlined compared to other candidates. The hiring process was smooth and the results are great at our office.",
       hiringTime: "2 days",
       satisfaction: "91%",
       name: "Rajiv Bajaj",
@@ -16,7 +16,7 @@ const TestimonialsComp = () => {
     },
     {
       id: 2,
-      quote: "We partnered with Novatr and found exceptional talent. The quality of candidates exceeded our expectations and they integrated seamlessly into our team.",
+      quote: "We partnered with Elite Bim and found exceptional talent. The quality of candidates exceeded our expectations and they integrated seamlessly into our team.",
       hiringTime: "3 days",
       satisfaction: "95%",
       name: "Sarah Mitchell",
@@ -25,7 +25,7 @@ const TestimonialsComp = () => {
     },
     {
       id: 3,
-      quote: "The professionalism and skill level of Novatr graduates is outstanding. They bring fresh perspectives and are ready to contribute from day one.",
+      quote: "The professionalism and skill level of Elite Bim graduates is outstanding. They bring fresh perspectives and are ready to contribute from day one.",
       hiringTime: "1 day",
       satisfaction: "93%",
       name: "Michael Chen",

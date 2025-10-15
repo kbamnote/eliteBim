@@ -1,7 +1,23 @@
 import React from 'react';
 import { Building, Code, Users, TrendingUp, ArrowRight } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function CareerPaths() {
+  // Modal state management
+  const {
+    isOpen,
+    formData,
+    agreedToTerms,
+    status,
+    handleChange,
+    handleSubmit,
+    closeModal,
+    handleOverlayClick,
+    setAgreedToTerms,
+    openModal
+  } = useCallbackModal();
+
   const paths = [
     {
       icon: Code,
@@ -97,7 +113,7 @@ export default function CareerPaths() {
                 <p className="text-xs text-gray-600">{path.growth}</p>
               </div>
               
-              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2 text-sm shadow-md">
+              <button onClick={openModal} className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2 text-sm shadow-md">
                 Learn More
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -112,11 +128,24 @@ export default function CareerPaths() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Take our career assessment to discover the BIM career path that matches your interests and skills.
           </p>
-          <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
+          <button onClick={openModal} className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-xl">
             Take Career Assessment
           </button>
         </div>
       </div>
+
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

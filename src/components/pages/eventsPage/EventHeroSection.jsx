@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Users, Award, PlayCircle, MapPin } from 'lucide-react';
+import { useCallbackModal } from '../../../hooks/useCallbackModal';
+import CallbackModal from '../../common/CallbackModal';
 
 export default function EventHeroSection() {
   const [currentStat, setCurrentStat] = useState(0);
+  
+  // Modal functionality
+  const { 
+    isOpen, 
+    formData, 
+    agreedToTerms, 
+    status, 
+    handleChange, 
+    handleSubmit, 
+    closeModal, 
+    handleOverlayClick, 
+    setAgreedToTerms, 
+    openModal 
+  } = useCallbackModal();
   
   const stats = [
     { icon: Users, label: "Attendees", value: "5000+" },
@@ -10,35 +26,45 @@ export default function EventHeroSection() {
     { icon: Calendar, label: "Upcoming Events", value: "12" }
   ];
 
+  const scrollToPastEvents = () => {
+    const pastEventsSection = document.getElementById('past-events');
+    if (pastEventsSection) {
+      pastEventsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const upcomingEvents = [
     {
       id: 1,
       title: "BIM for Infrastructure Projects",
-      date: "Oct 15, 2025",
+      date: "Nov 15, 2025",
       time: "2:00 PM - 4:00 PM",
-      location: "Online Webinar",
+      location: "Elite BIM Center",
       type: "Workshop",
-      speaker: "Dr. Michael Chen",
+      speaker: "Tanveer Ahmad",
       company: "Arup"
     },
     {
       id: 2,
       title: "Revit Advanced Coordination Techniques",
-      date: "Oct 22, 2025",
+      date: "Nov 22, 2025",
       time: "3:00 PM - 5:00 PM",
       location: "Online Webinar",
       type: "Masterclass",
-      speaker: "Sarah Johnson",
+      speaker: "Mohammad Nayeem Ahmad",
       company: "WSP"
     },
     {
       id: 3,
       title: "Sustainable Design with BIM",
-      date: "Nov 5, 2025",
+      date: "Dec 5, 2025",
       time: "1:00 PM - 3:00 PM",
       location: "Elite BIM Center",
       type: "Seminar",
-      speaker: "Prof. Robert Kim",
+      speaker: "Mohammad Subhan",
       company: "AECOM"
     }
   ];
@@ -110,12 +136,18 @@ export default function EventHeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl">
+              <button 
+                onClick={openModal}
+                className="bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-300 hover:to-pink-300 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl"
+              >
                 Register Now
                 <Calendar className="w-5 h-5" />
               </button>
-              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400">
-                <PlayCircle className="w-5 h-5" />
+              <button 
+                onClick={scrollToPastEvents}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl border-2 border-purple-400"
+              >
+                <Calendar className="w-5 h-5" />
                 View Past Events
               </button>
             </div>
@@ -170,7 +202,10 @@ export default function EventHeroSection() {
                 ))}
               </div>
               
-              <button className="w-full mt-6 bg-white text-purple-900 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-md">
+              <button 
+                onClick={scrollToPastEvents}
+                className="w-full mt-6 bg-white text-purple-900 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-md"
+              >
                 View All Events
               </button>
             </div>
@@ -194,6 +229,19 @@ export default function EventHeroSection() {
           </div>
         </div>
       </div>
+      
+      {/* Callback Modal */}
+      <CallbackModal
+        isOpen={isOpen}
+        formData={formData}
+        agreedToTerms={agreedToTerms}
+        status={status}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        closeModal={closeModal}
+        handleOverlayClick={handleOverlayClick}
+        setAgreedToTerms={setAgreedToTerms}
+      />
     </div>
   );
 }

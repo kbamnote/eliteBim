@@ -13,7 +13,7 @@ export default function BimTestimonials() {
         icon: TrendingUp
       },
       review: "This course has been an eye opener in terms of how the AEC industry has changed and how we need to be a part of this change. The enthusiasm of Oneistox team to make a difference for their students is heartwarming.",
-      footer: "Review of BIM Professional Course by Oneistox, (now Novatr)"
+      footer: "Review of BIM Professional Course by Oneistox, (now Elite Bim)"
     },
     {
       name: "Aditi Shukla",
@@ -25,7 +25,7 @@ export default function BimTestimonials() {
         icon: Briefcase
       },
       review: "The capstone project was my favourite part. It was a glimpse of how projects are handled in the real world. The gamification of the project and our progress made it even more interesting.",
-      footer: "Review of BIM Professional Course by Oneistox, (now Novatr)"
+      footer: "Review of BIM Professional Course by Oneistox, (now Elite Bim)"
     },
     {
       name: "Ankita Maurya",
@@ -37,7 +37,7 @@ export default function BimTestimonials() {
         icon: TrendingUp
       },
       review: "BIM course truly designed as per the need of AEC industry. The whole team of Oneistox supported throughout the course and answered each query without any delay. Perfect course for professionals to upskill.",
-      footer: "Review of BIM Professional Course by Oneistox, (now Novatr)"
+      footer: "Review of BIM Professional Course by Oneistox, (now Elite Bim)"
     }
   ];
 
@@ -50,7 +50,7 @@ export default function BimTestimonials() {
             What Our <span className="text-purple-600">Students Say</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Real stories from professionals who transformed their careers with Novatr
+            Real stories from professionals who transformed their careers with Elite Bim
           </p>
         </div>
 

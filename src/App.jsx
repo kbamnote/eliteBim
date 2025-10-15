@@ -13,6 +13,7 @@ import EventsPage from './components/pages/eventsPage/EventsPage'
 import HiringPage from './components/pages/hirePage/HiringPage'
 import NotFound from './components/pages/404/NotFound'
 import MainLayout from './components/layouts/MainLayout'
+import EventHero from './components/pages/eventsPage/EventHero'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/events' element={<EventsPage />} />
         <Route path='/career' element={<CareerPage />} />
         <Route path='/impact' element={<ImpactPage />} />
+         <Route path='/past-events' element={<EventHero/>} />
         {/* <Route path='/resources' element={<ResourcesPage />} /> */}
         <Route path='/*' element={<NotFound />} />
       </Routes>
