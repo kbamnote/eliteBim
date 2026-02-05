@@ -1,29 +1,32 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import photo1 from '../../../assets/Photo/6.jpg';
+import photo2 from '../../../assets/Photo/2.jpg';
+import photo3 from '../../../assets/Photo/3.jpg';
 
 export default function StructureCourseTestimonials() {
   const testimonials = [
     {
-      name: "Sarah Chen",
+      name: "Anjali Desai",
       role: "Senior Structural Engineer",
       company: "AECOM",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      image: photo1,
       rating: 5,
       text: "The structural BIM course transformed my career. I went from traditional 2D drafting to leading BIM projects for major infrastructure. The reinforcement modeling module was particularly valuable."
     },
     {
-      name: "Michael Rodriguez",
+      name: "Rajesh Kumar",
       role: "BIM Coordinator",
       company: "Thornton Tomasetti",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      image: photo2,
       rating: 5,
       text: "Elite's structural BIM program is comprehensive and practical. The integration with analysis software and real project experience prepared me perfectly for my current role."
     },
     {
-      name: "Emily Johnson",
+      name: "Priya Sharma",
       role: "Structural Designer",
       company: "Arup",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      image: photo3,
       rating: 5,
       text: "The course content is cutting-edge and the instructors are industry experts. I learned advanced reinforcement techniques that I use daily in my structural design work."
     }

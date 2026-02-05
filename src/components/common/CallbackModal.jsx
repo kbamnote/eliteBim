@@ -18,9 +18,9 @@ const CallbackModal = ({
     <div
       id="overlay"
       onClick={handleOverlayClick}
-      className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm bg-black/50"
+      className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm bg-black/50 p-4"
     >
-      <div className="bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl shadow-2xl w-full max-w-lg p-8 relative animate-zoom-in border border-purple-400/30">
+      <div className="bg-gradient-to-br from-purple-900 to-indigo-900 rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-md p-6 sm:p-8 relative animate-zoom-in border border-purple-400/30 mobile-modal">
         {/* Close Button */}
         <button
           onClick={closeModal}
@@ -30,10 +30,10 @@ const CallbackModal = ({
         </button>
 
         {/* Modal Title */}
-        <h2 className="text-2xl font-bold mb-2 text-center text-white">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center text-white mobile-heading">
           Request a Callback
         </h2>
-        <p className="text-purple-200 text-center mb-6">
+        <p className="text-purple-200 text-center mb-6 text-sm">
           Know how you can accelerate your career 🚀
         </p>
 
@@ -45,7 +45,7 @@ const CallbackModal = ({
             value={formData.fullName}
             onChange={handleChange}
             placeholder="Full Name"
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            className="w-full px-3 py-3 sm:px-4 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
           />
           
           <input
@@ -54,7 +54,7 @@ const CallbackModal = ({
             value={formData.email}
             onChange={handleChange}
             placeholder="Email Address"
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            className="w-full px-3 py-3 sm:px-4 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
           />
           
           <input
@@ -63,14 +63,14 @@ const CallbackModal = ({
             value={formData.phoneNo}
             onChange={handleChange}
             placeholder="Phone Number"
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            className="w-full px-3 py-3 sm:px-4 rounded-lg bg-white/10 border border-purple-400/30 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
           />
           
           <select
             name="experience"
             value={formData.experience}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-purple-400/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            className="w-full px-3 py-3 sm:px-4 rounded-lg bg-white/10 border border-purple-400/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
           >
             <option value="" className="text-gray-900">Select Experience Level</option>
             <option value="0-1 years" className="text-gray-900">0-1 years</option>
@@ -83,7 +83,7 @@ const CallbackModal = ({
             name="specialisation"
             value={formData.specialisation}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-white/10 border border-purple-400/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            className="w-full px-3 py-3 sm:px-4 rounded-lg bg-white/10 border border-purple-400/30 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
           >
             <option value="" className="text-gray-900">Select Specialisation</option>
             <option value="Architecture" className="text-gray-900">Architecture</option>
@@ -116,33 +116,35 @@ const CallbackModal = ({
           )}
 
           {/* Terms Checkbox */}
-          <label className="flex items-start gap-3 text-sm text-purple-200 cursor-pointer">
+          <label className="flex items-start gap-3 text-xs sm:text-sm text-purple-200 cursor-pointer">
             <input
               type="checkbox"
               checked={agreedToTerms}
               onChange={(e) => setAgreedToTerms(e.target.checked)}
               className="mr-2 mt-1 accent-purple-500"
             />
-            I agree to the{" "}
-            <a href="#" className="text-yellow-300 ml-1 underline">
-              Terms of Use
-            </a>{" "}
-            and{" "}
-            <a href="#" className="text-yellow-300 underline ml-1">
-              Privacy Policy
-            </a>
-            , and consent to be contacted by Email, Call, WhatsApp, or SMS
+            <span className="flex-1">
+              I agree to the{" "}
+              <a href="#" className="text-yellow-300 ml-1 underline">
+                Terms of Use
+              </a>{" "}
+              and{" "}
+              <a href="#" className="text-yellow-300 underline ml-1">
+                Privacy Policy
+              </a>
+              , and consent to be contacted by Email, Call, WhatsApp, or SMS
+            </span>
           </label>
 
           <button
             onClick={handleSubmit}
             disabled={status.loading}
-            className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-3 rounded-lg shadow-lg hover:from-yellow-300 hover:to-pink-300 transition-all font-bold transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-yellow-400 to-pink-400 text-purple-900 py-3 rounded-lg shadow-lg hover:from-yellow-300 hover:to-pink-300 transition-all font-bold transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mobile-btn"
           >
             {status.loading ? (
               <>
                 <div className="w-5 h-5 border-2 border-purple-900 border-t-transparent rounded-full animate-spin" />
-                Sending...
+                <span className="text-sm">Sending...</span>
               </>
             ) : (
               "Request a Callback"

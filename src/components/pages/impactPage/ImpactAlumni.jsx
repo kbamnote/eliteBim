@@ -1,5 +1,13 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import photo1 from '../../../assets/Photo/1.jpg';
+import photo8 from '../../../assets/Photo/8.jpg';
+import photo3 from '../../../assets/Photo/3.jpg';
+import photo4 from '../../../assets/Photo/4.jpg';
+import photo5 from '../../../assets/Photo/5.jpg';
+import photo6 from '../../../assets/Photo/6.jpg';
+import photo7 from '../../../assets/Photo/7.jpg';
+
 
 const ImpactAlumni = () => {
   const stories = [
@@ -8,7 +16,7 @@ const ImpactAlumni = () => {
       name: "Yuvraj Udhwani",
       role: "Architect | Computational Design Expert",
       company: "Bjarke Ingels Group (BIG)",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      image: photo1,
       story: "Developed efficiency at BIG. Successfully transitioned from traditional practice to computational design, now leading innovative projects with parametric workflows.",
       highlights: ["Computational Design", "BIM Expertise", "International Projects"]
     },
@@ -17,27 +25,27 @@ const ImpactAlumni = () => {
       name: "Ritesh D",
       role: "BIM Engineer | Architect",
       company: "Urban Designers + Hatch",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+      image: photo8,
       story: "After completing training, secured position at Hatch as BIM engineer. Now managing large-scale infrastructure projects using cutting-edge technology.",
       projectImage: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&q=80",
       highlights: ["BIM Engineering", "Infrastructure", "Team Leadership"]
     },
     {
       id: 3,
-      name: "Ehtab Shah",
+      name: "Sneha Patil",
       role: "Senior Architect | Design Innovator",
       company: "International Firm",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+      image: photo3,
       story: "I'm excited to share the completion of multiple software-assisted projects. Through my learnings, I've been able to push the boundaries of design innovation.",
       projectImage: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=500&q=80",
       highlights: ["Design Innovation", "Software Expertise", "Project Leadership"]
     },
     {
       id: 4,
-      name: "Girish Kumar",
+      name: "Meera Patel",
       role: "Architect | BIM Specialist",
       company: "Leading Design Firm",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      image: photo4,
       story: "I found confidence in Revit by understanding how placing a family can be easier than placing individual items, allowing me to confidently tackle complex projects.",
       highlights: ["Revit Expert", "BIM Implementation", "Technical Skills"]
     },
@@ -46,17 +54,17 @@ const ImpactAlumni = () => {
       name: "Pavan Gawali",
       role: "Computational Design Expert",
       company: "Foster + Partners",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+      image: photo5,
       story: "Leveraged Dynamo Computational, Grasshopper & Computational Design Specialist. Successfully transitioned to working on high-profile international projects.",
       projectImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&q=80",
       highlights: ["Dynamo", "Grasshopper", "Computational Design"]
     },
     {
       id: 6,
-      name: "Ritesh R",
+      name: "Priya Sharma",
       role: "Lead Architect | Principal Designer",
       company: "AECOM",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+      image: photo6,
       story: "From doubting myself to leading major projects. Launched my LinkedIn, now hosting a CADCON conference with over 2,100 members. Teaching wasn't something I thought I'd do, but here I am.",
       projectImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&q=80",
       highlights: ["Leadership", "Community Building", "Education"]
@@ -66,7 +74,7 @@ const ImpactAlumni = () => {
       name: "Aman Sathankar",
       role: "BIM Manager | Design Lead",
       company: "International Practice",
-      image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80",
+      image: photo7,
       story: "It was a dream come true to be selected as one of the best young professionals. Achieved success in securing international collaborations through building networks and confidence.",
       highlights: ["BIM Management", "International Recognition", "Networking"]
     },
@@ -75,7 +83,7 @@ const ImpactAlumni = () => {
       name: "Kris Kalsian",
       role: "Computational Designer",
       company: "Zaha Hadid Architects",
-      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&q=80",
+      image: photo8,
       story: "Working on futuristic designs and parametric workflows. Mastered computational tools and now contributing to world-renowned architectural projects.",
       projectImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80",
       highlights: ["Parametric Design", "Innovation", "World-class Projects"]

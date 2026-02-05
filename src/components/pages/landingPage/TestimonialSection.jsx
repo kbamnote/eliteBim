@@ -1,12 +1,14 @@
 import React from 'react';
 import { Building2 } from 'lucide-react';
+import photo13 from '../../../assets/Photo/13.jpg';
+import photo14 from '../../../assets/Photo/14.jpg';
 
 export default function TestimonialSection() {
   const testimonials = [
     {
-      name: "Maureen Jachingi",
+      name: "Meera Jain",
       role: "BIM Salary Hike",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      image: photo13,
       text: "The course was an excellent blend of theoretical concepts and practical applications. It's an excellent investment for those looking to enhance their career prospects and stay relevant in the constantly evolving AEC industry.",
       gradient: "from-green-400 to-green-300",
       badgeColor: "bg-green-500"
@@ -14,7 +16,7 @@ export default function TestimonialSection() {
     {
       name: "Ravi Kumar",
       role: "Got Ex-Comp Offer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      image: photo14,
       text: "After completing the BIM course, I was very grateful for the Elite Bim team's guidance, interview training, and assistance in finding the right employment opportunities. They have been a huge part of my career switch.",
       gradient: "from-pink-400 to-purple-400",
       badgeColor: "bg-pink-500"

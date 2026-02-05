@@ -1,12 +1,15 @@
 import React from 'react';
 import { TrendingUp, Briefcase } from 'lucide-react';
+import photo15 from '../../assets/Photo/15.jpg';
+import photo16 from '../../assets/Photo/16.png';
+import photo17 from '../../assets/Photo/17.png';
 
 export default function BimTestimonials() {
   const testimonials = [
     {
       name: "Aditya Gupta",
       role: "Architect, DAR",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80",
+      image: photo15,
       badge: {
         text: "26% Salary Hike",
         type: "salary",
@@ -18,7 +21,7 @@ export default function BimTestimonials() {
     {
       name: "Aditi Shukla",
       role: "Jr BIM Architect, Techture",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80",
+      image: photo16,
       badge: {
         text: "First Job",
         type: "job",
@@ -30,7 +33,7 @@ export default function BimTestimonials() {
     {
       name: "Ankita Maurya",
       role: "BIM Architect, BIM Engineers",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&q=80",
+      image: photo17,
       badge: {
         text: "25% Salary Hike",
         type: "salary",

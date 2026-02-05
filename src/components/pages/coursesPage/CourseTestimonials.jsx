@@ -2,6 +2,9 @@ import React from 'react';
 import { Star, Quote, TrendingUp, Award } from 'lucide-react';
 import { useCallbackModal } from '../../../hooks/useCallbackModal';
 import CallbackModal from '../../common/CallbackModal';
+import photo1 from '../../../assets/Photo/1.jpg';
+import photo2 from '../../../assets/Photo/2.jpg';
+import photo3 from '../../../assets/Photo/3.jpg';
 
 export default function CourseTestimonials() {
   // Modal state management
@@ -20,32 +23,32 @@ export default function CourseTestimonials() {
 
   const testimonials = [
     {
-      name: "Alex Johnson",
+      name: "Arjun Mehta",
       role: "BIM Coordinator",
       company: "Skanska",
       before: "CAD Technician",
       salaryIncrease: "65%",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      avatar: photo1,
       quote: "Elite BIM completely transformed my career. In just 7 months, I went from struggling with basic CAD to leading BIM coordination for major construction projects. The mentorship and real-world projects made all the difference.",
       rating: 5
     },
     {
-      name: "Priya Patel",
+      name: "Raju Mehta",
       role: "BIM Manager",
       company: "AECOM",
       before: "Architecture Graduate",
       salaryIncrease: "85%",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop",
+      avatar: photo2,
       quote: "The course curriculum is incredibly comprehensive. I learned not just the software, but how to think strategically about BIM implementation. Now I'm managing a team of 8 BIM professionals.",
       rating: 5
     },
     {
-      name: "David Kim",
+      name: "Rohini Desai",
       role: "VDC Specialist",
       company: "Turner Construction",
       before: "Project Engineer",
       salaryIncrease: "70%",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+      avatar: photo3,
       quote: "The networking opportunities alone were worth the investment. I connected with professionals who helped me land my dream job. The technical skills I gained gave me confidence to take on complex projects.",
       rating: 5
     }

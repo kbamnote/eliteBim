@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight, Award, Briefcase, TrendingUp } from 'lucide-react';
 import { useCallbackModal } from '../../../hooks/useCallbackModal';
 import CallbackModal from '../../common/CallbackModal';
+import photo4 from '../../../assets/Photo/4.jpg';
+import photo5 from '../../../assets/Photo/5.jpg';
+import photo6 from '../../../assets/Photo/6.jpg';
+import photo7 from '../../../assets/Photo/7.jpg';
 
 export default function SoftwareTestimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -24,7 +28,7 @@ export default function SoftwareTestimonials() {
       name: "Rajesh Kumar",
       role: "BIM Coordinator",
       company: "Larsen & Toubro",
-      image: "/api/placeholder/80/80",
+      image: photo4,
       rating: 5,
       software: "Revit & Navisworks",
       testimonial: "The comprehensive Revit and Navisworks training at Elite Associate transformed my career. I went from a junior drafter to a BIM Coordinator within 8 months. The hands-on approach and real project experience made all the difference.",
@@ -37,7 +41,7 @@ export default function SoftwareTestimonials() {
       name: "Priya Sharma",
       role: "Structural BIM Engineer",
       company: "Tata Projects",
-      image: "/api/placeholder/80/80",
+      image: photo5,
       rating: 5,
       software: "Tekla Structures",
       testimonial: "Learning Tekla Structures at Elite Associate opened doors I never imagined. The instructors' industry experience and practical approach helped me master complex steel detailing. Now I'm leading structural BIM projects.",
@@ -50,7 +54,7 @@ export default function SoftwareTestimonials() {
       name: "Mohammed Ali",
       role: "MEP BIM Specialist",
       company: "Godrej & Boyce",
-      image: "/api/placeholder/80/80",
+      image: photo6,
       rating: 5,
       software: "Revit MEP & AutoCAD",
       testimonial: "The MEP-focused training program was exactly what I needed. From AutoCAD basics to advanced Revit MEP workflows, everything was covered systematically. The job placement support helped me land my dream job.",
@@ -63,7 +67,7 @@ export default function SoftwareTestimonials() {
       name: "Sneha Patel",
       role: "Visualization Specialist",
       company: "Hafeez Contractor",
-      image: "/api/placeholder/80/80",
+      image: photo7,
       rating: 5,
       software: "SketchUp & Lumion",
       testimonial: "The visualization training combining SketchUp and Lumion was phenomenal. I learned to create stunning architectural visualizations that wow clients. The portfolio I built during the course directly led to my current position.",

@@ -1,23 +1,26 @@
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
+import photo4 from '../../../assets/Photo/4.jpg';
+import photo5 from '../../../assets/Photo/5.jpg';
+import photo6 from '../../../assets/Photo/6.jpg';
 
 const ImpactTestimonial = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Meera Patel",
       role: "BIM Coordinator at WSP",
       content: "Elite BIM transformed my career. The hands-on projects and mentorship helped me land my dream job at WSP with a 30% salary increase.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
+      avatar: photo4
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Rahul Mehta",
       role: "Senior BIM Manager at AECOM",
       content: "The curriculum is industry-focused and the instructors are top-notch. I've recommended Elite BIM to all my colleagues.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+      avatar: photo5
     },
     {
       id: 3,
@@ -25,7 +28,7 @@ const ImpactTestimonial = () => {
       role: "MEP Engineer at Arup",
       content: "The career support team went above and beyond to help me transition into the BIM field. I'm now leading projects at Arup!",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face"
+      avatar: photo6
     }
   ];
 

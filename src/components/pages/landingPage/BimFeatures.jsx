@@ -20,11 +20,11 @@ export default function BimFeatures() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center p-4 sm:p-8">
       <div className="max-w-7xl w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Side - Features */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -33,15 +33,15 @@ export default function BimFeatures() {
                 }`}
                 onMouseEnter={() => setActiveSlide(index)}
               >
-                <div className="flex items-start gap-4 cursor-pointer group">
-                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                    <feature.icon className="w-8 h-8 text-white" />
+                <div className="flex items-start gap-3 sm:gap-4 cursor-pointer group">
+                  <div className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg flex-shrink-0 group-hover:bg-white/20 transition-colors">
+                    <feature.icon className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-white text-2xl font-semibold mb-3">
+                    <h3 className="text-white text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-purple-200 text-base leading-relaxed">
+                    <p className="text-purple-200 text-sm sm:text-base leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -75,7 +75,7 @@ export default function BimFeatures() {
                 </div>
 
                 {/* User Images Grid */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                {/* <div className="grid grid-cols-3 gap-4 mb-6">
                   <img 
                     src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&q=80" 
                     alt="Team member"
@@ -91,7 +91,7 @@ export default function BimFeatures() {
                     alt="Team member"
                     className="w-full h-24 object-cover rounded-lg"
                   />
-                </div>
+                </div> */}
 
                 {/* Chat Messages */}
                 <div className="space-y-4">
@@ -123,21 +123,21 @@ export default function BimFeatures() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-purple-400/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 w-24 sm:w-32 h-24 sm:h-32 bg-purple-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 w-24 sm:w-32 h-24 sm:h-32 bg-indigo-400/20 rounded-full blur-3xl"></div>
           </div>
         </div>
 
         {/* Slide Indicators */}
-        <div className="flex justify-center gap-3 mt-12">
+        <div className="flex justify-center gap-2 sm:gap-3 mt-8 sm:mt-12">
           {features.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 activeSlide === index
-                  ? 'bg-white w-8 h-3'
-                  : 'bg-white/40 w-3 h-3 hover:bg-white/60'
+                  ? 'bg-white w-6 sm:w-8 h-2 sm:h-3'
+                  : 'bg-white/40 w-2 sm:w-3 h-2 sm:h-3 hover:bg-white/60'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

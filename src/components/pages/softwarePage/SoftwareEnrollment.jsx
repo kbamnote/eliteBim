@@ -163,10 +163,10 @@ export default function SoftwareEnrollment() {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-1">
+                  {/* <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-1">
                     <Star className="w-4 h-4 fill-current" />
                     <span>Most Popular</span>
-                  </div>
+                  </div> */}
                 </div>
               )}
 

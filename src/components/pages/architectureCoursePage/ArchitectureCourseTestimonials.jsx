@@ -2,6 +2,12 @@ import React from 'react';
 import { Star, Quote, Building, Users, TrendingUp, Award } from 'lucide-react';
 import { useCallbackModal } from '../../../hooks/useCallbackModal';
 import CallbackModal from '../../common/CallbackModal';
+import photo8 from '../../../assets/Photo/8.jpg';
+import photo9 from '../../../assets/Photo/9.jpg';
+import photo10 from '../../../assets/Photo/10.jpg';
+import photo11 from '../../../assets/Photo/11.jpg';
+import photo12 from '../../../assets/Photo/12.jpg';
+import photo13 from '../../../assets/Photo/13.jpg';
 
 export default function ArchitectureCourseTestimonials() {
   // Modal state management
@@ -19,55 +25,55 @@ export default function ArchitectureCourseTestimonials() {
   } = useCallbackModal();
   const testimonials = [
     {
-      name: "Sarah Chen",
+      name: "Arjun Mehta",
       role: "Senior Architect",
       company: "Gensler",
-      image: "/api/placeholder/80/80",
+      image: photo8,
       rating: 5,
       text: "The Elite BIM Architecture program transformed my career completely. I went from junior architect to senior architect at Gensler within 8 months of completing the course. The visualization and BIM coordination skills I learned are invaluable in today's architectural practice.",
       achievement: "Promoted to Senior Architect"
     },
     {
-      name: "Michael Rodriguez",
+      name: "Rahul Khanna",
       role: "Design Director",
       company: "HOK",
-      image: "/api/placeholder/80/80",
+      image: photo9,
       rating: 5,
       text: "This program gave me the technical expertise and confidence to lead complex architectural projects. The hands-on approach and real-world projects prepared me perfectly for the challenges I face daily. Now I'm leading a team of 12 architects on major commercial projects.",
       achievement: "Leading $50M+ Projects"
     },
     {
-      name: "Emily Johnson",
+      name: "Priya Nair",
       role: "BIM Manager",
       company: "Perkins&Will",
-      image: "/api/placeholder/80/80",
+      image: photo10,
       rating: 5,
       text: "The comprehensive curriculum covered everything from basic modeling to advanced visualization techniques. The mentorship program was exceptional - having a senior architect guide me through real projects made all the difference. I landed my dream job 3 weeks after graduation.",
       achievement: "Dream Job in 3 Weeks"
     },
     {
-      name: "David Park",
+      name: "Vikram Mehta",
       role: "Principal Architect",
       company: "SOM",
-      image: "/api/placeholder/80/80",
+      image: photo11,
       rating: 5,
       text: "As someone who transitioned from traditional CAD to BIM, this program was exactly what I needed. The structured approach and expert instruction helped me master Revit and architectural visualization quickly. I'm now leading BIM implementation at my firm.",
       achievement: "Leading BIM Implementation"
     },
     {
-      name: "Lisa Thompson",
+      name: "Kavita Patel",
       role: "Architectural Designer",
       company: "Foster + Partners",
-      image: "/api/placeholder/80/80",
+      image: photo12,
       rating: 5,
       text: "The portfolio I built during this program was instrumental in landing my position at Foster + Partners. The projects were challenging and realistic, giving me confidence to tackle complex architectural designs. The career support team was amazing throughout the job search process.",
       achievement: "Joined Foster + Partners"
     },
     {
-      name: "James Wilson",
+      name: "Amit Sharma",
       role: "Senior Designer",
       company: "Zaha Hadid Architects",
-      image: "/api/placeholder/80/80",
+      image: photo13,
       rating: 5,
       text: "This program opened doors I never thought possible. The advanced parametric design techniques and computational workflows I learned are exactly what firms like Zaha Hadid Architects are looking for. My salary increased by 60% after completing the program.",
       achievement: "60% Salary Increase"

@@ -2,6 +2,10 @@ import React from 'react';
 import { Star, Quote, TrendingUp, Award, Building, Users,Target } from 'lucide-react';
 import { useCallbackModal } from '../../../hooks/useCallbackModal';
 import CallbackModal from '../../common/CallbackModal';
+import photo14 from '../../../assets/Photo/14.jpg';
+import photo15 from '../../../assets/Photo/15.jpg';
+import photo16 from '../../../assets/Photo/16.png';
+import photo17 from '../../../assets/Photo/17.png';
 
 export default function MEPFCourseTestimonials() {
   // Modal state management
@@ -22,7 +26,7 @@ export default function MEPFCourseTestimonials() {
       name: "Rajesh Kumar",
       role: "Senior MEP Engineer",
       company: "AECOM",
-      image: "/src/assets/teamone.jpeg",
+      image: photo14,
       rating: 5,
       testimonial: "The MEPF BIM course transformed my career completely. I went from a junior engineer to leading MEP coordination for major commercial projects. The hands-on approach and real-world projects gave me confidence to handle complex HVAC and electrical systems.",
       achievement: "Promoted to Senior Engineer within 8 months"
@@ -31,7 +35,7 @@ export default function MEPFCourseTestimonials() {
       name: "Priya Sharma",
       role: "MEP Design Coordinator",
       company: "Jacobs Engineering",
-      image: "/src/assets/teamtwo.jpeg",
+      image: photo15,
       rating: 5,
       testimonial: "Elite Associate's MEPF program is incredibly comprehensive. The curriculum covers everything from basic electrical design to advanced HVAC modeling. My salary increased by 60% after completing the course, and I now lead a team of 12 engineers.",
       achievement: "60% salary increase and team leadership role"
@@ -40,16 +44,16 @@ export default function MEPFCourseTestimonials() {
       name: "Mohammed Ali",
       role: "BIM Manager - MEP",
       company: "WSP Global",
-      image: "/src/assets/teamthree.jpeg",
+      image: photo16,
       rating: 5,
       testimonial: "The course's focus on coordination and clash detection was game-changing. I can now efficiently manage multi-discipline projects and ensure seamless integration between architectural, structural, and MEP systems. The industry connections helped me land my dream job.",
       achievement: "Became BIM Manager at a Fortune 500 company"
     },
     {
-      name: "Sneha Patel",
+      name: "Sajal Shende",
       role: "Electrical Design Engineer",
       company: "Arup",
-      image: "/src/assets/teamfour.jpeg",
+      image: photo17,
       rating: 5,
       testimonial: "The electrical systems module was outstanding. I learned advanced power distribution design, lighting calculations, and fire alarm integration. The portfolio I built during the course directly helped me secure a position at Arup with a 45% salary jump.",
       achievement: "Secured position at Arup with 45% salary increase"
