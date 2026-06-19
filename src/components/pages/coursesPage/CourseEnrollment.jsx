@@ -24,9 +24,9 @@ export default function CourseEnrollment() {
     {
       id: 'full',
       name: 'Full Payment',
-      price: '$2,997',
-      originalPrice: '$3,997',
-      savings: 'Save $1,000',
+      price: '₹ 286,113 + GST',
+      originalPrice: '₹ 381,579',
+      savings: 'Save ₹ 95,467',
       description: 'One-time payment with maximum savings',
       features: [
         'Complete 7-month program',
@@ -41,7 +41,7 @@ export default function CourseEnrollment() {
     {
       id: 'installment',
       name: 'Monthly Installments',
-      price: '$499',
+      price: '₹ 47,638 + GST',
       period: '/month × 7 months',
       description: 'Spread the cost over the course duration',
       features: [
@@ -113,7 +113,7 @@ export default function CourseEnrollment() {
                   </div>
                 </div>
                 
-                <div className="mb-6">
+                <div className="mb-7">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-purple-600">{plan.price}</span>
                     {plan.period && <span className="text-gray-600">{plan.period}</span>}

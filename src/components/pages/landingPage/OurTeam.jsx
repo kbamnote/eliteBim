@@ -35,7 +35,7 @@ const OurTeam = () => {
     {
       id: 2,
       name: "Mohammad Subhan",
-      image: teamtwo,
+      image: teamfour,
       location: "Pansare Nagar, Lane Number 3, Hamdan Heights Yawlewadi",
       dateOfBirth: "4th August 1996",
       qualification: "B.E Mechanical",
@@ -46,7 +46,7 @@ const OurTeam = () => {
     {
       id: 3,
       name: "Mohammad Nayeem Ahmad",
-      image: teamthree,
+      image: teamtwo,
       location: "W/31, Ismailpura Near Masjid Yerkheda Road Kamptee -441001",
       dateOfBirth: "28-07-1993",
       qualification: "B.E Civil",
@@ -57,7 +57,7 @@ const OurTeam = () => {
     {
       id: 4,
       name: "Tanveer Ahmad",
-      image: teamfour,
+      image: teamthree,
       location: "Pili Haweli, Kamptee -441001",
       dateOfBirth: "04-01-1993",
       qualification: "B.E Civil",
@@ -107,7 +107,7 @@ const OurTeam = () => {
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full  h-full object-cover rounded-full"
                   />
                 </div>
                 {/* Floating decoration */}

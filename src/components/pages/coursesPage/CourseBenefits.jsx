@@ -7,7 +7,7 @@ export default function CourseBenefits() {
       icon: Briefcase,
       title: "95% Job Placement Rate",
       description: "Direct connections with 500+ hiring partners including AECOM, WSP, and Arup",
-      highlight: "Average salary: $75k+"
+      highlight: "Average salary: ₹ 7,102,875+"
     },
     {
       icon: TrendingUp,

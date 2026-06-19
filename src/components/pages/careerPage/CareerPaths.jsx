@@ -23,7 +23,7 @@ export default function CareerPaths() {
       icon: Code,
       title: "BIM Modeler",
       level: "Entry Level",
-      salary: "$45k - $65k",
+      salary: "₹ 4,259,250 - ₹ 6,151,763",
       description: "Create detailed 3D models and technical drawings",
       skills: ["Revit", "AutoCAD", "3D Modeling", "Technical Drawing"],
       growth: "BIM Coordinator → BIM Manager",
@@ -34,7 +34,7 @@ export default function CareerPaths() {
       icon: Users,
       title: "BIM Coordinator",
       level: "Mid Level",
-      salary: "$65k - $85k", 
+      salary: "₹ 6,151,763 - ₹ 8,044,613", 
       description: "Coordinate models and manage clash detection",
       skills: ["Navisworks", "Model Coordination", "Quality Control", "Team Leadership"],
       growth: "BIM Manager → VDC Manager",
@@ -45,7 +45,7 @@ export default function CareerPaths() {
       icon: Building,
       title: "BIM Manager",
       level: "Senior Level",
-      salary: "$85k - $120k",
+      salary: "₹ 8,044,613 - ₹ 11,357,100",
       description: "Lead BIM implementation and strategy",
       skills: ["Project Management", "BIM Standards", "Strategic Planning", "Client Relations"],
       growth: "VDC Director → Technology Director",
@@ -56,7 +56,7 @@ export default function CareerPaths() {
       icon: TrendingUp,
       title: "VDC Specialist",
       level: "Specialist",
-      salary: "$90k - $150k",
+      salary: "₹ 8,517,825 - 14,196,375",
       description: "Drive digital construction innovation",
       skills: ["VDC Planning", "Digital Twins", "Innovation", "Technology Integration"],
       growth: "Innovation Director → CTO",
@@ -85,8 +85,8 @@ export default function CareerPaths() {
               </div>
               
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{path.title}</h3>
-                <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 ">{path.title}</h3>
+                <div className="flex items-center justify-between mb-2 gap-2">
                   <span className="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                     {path.level}
                   </span>

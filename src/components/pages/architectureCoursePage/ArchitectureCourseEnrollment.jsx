@@ -24,9 +24,9 @@ export default function ArchitectureCourseEnrollment() {
     {
       id: 'full',
       name: 'Full Payment',
-      price: '$2,297',
-      originalPrice: '$3,097',
-      savings: 'Save $800',
+      price: '₹ 217,538',
+      originalPrice: '₹ 293,302',
+      savings: 'Save ₹ 75,764',
       description: 'One-time payment with maximum savings',
       features: [
         'Complete 6-month architecture program',
@@ -41,7 +41,7 @@ export default function ArchitectureCourseEnrollment() {
     {
       id: 'installment',
       name: 'Monthly Installments',
-      price: '$399',
+      price: '₹ 37,788',
       period: '/month × 6 months',
       description: 'Spread the cost over the course duration',
       features: [
